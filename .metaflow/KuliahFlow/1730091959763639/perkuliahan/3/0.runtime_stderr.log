@@ -1,0 +1,32 @@
+[MFLOG|0|2024-10-28T05:06:00.674941Z|runtime|c891fd4c-b48f-4fe1-9df5-1ba9e08ed99d]<flow KuliahFlow step perkuliahan> failed:
+[MFLOG|0|2024-10-28T05:06:00.678555Z|runtime|55fcdb4d-87af-44cb-bc73-af237c18b145]    Internal error
+[MFLOG|0|2024-10-28T05:06:00.679581Z|runtime|13199db2-4193-48d3-80aa-fc37f2e8cdb3]Traceback (most recent call last):
+[MFLOG|0|2024-10-28T05:06:00.735786Z|runtime|bbbc49e2-0f79-4367-bbc6-729bcbe2a9ab]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/cli.py", line 1139, in main
+[MFLOG|0|2024-10-28T05:06:00.736234Z|runtime|521e43dc-51c9-46ec-a9d5-fdb91726bab9]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2024-10-28T05:06:00.736550Z|runtime|975b3a1b-66dc-4e91-ad17-34d41c37f037]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2024-10-28T05:06:00.736754Z|runtime|8163bb2e-1153-4fc3-b6fd-357c28160ab5]    return func(args, kwargs)
+[MFLOG|0|2024-10-28T05:06:00.736969Z|runtime|526a69a5-b3df-4b80-85e9-ed1be17f3489]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2024-10-28T05:06:00.737123Z|runtime|5f8d27c9-7fa2-4968-a4df-b3ff2c9fa83c]    return self.main(args, kwargs)
+[MFLOG|0|2024-10-28T05:06:00.737288Z|runtime|48ab362f-351f-4b21-86ea-b15171ef36ed]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2024-10-28T05:06:00.737446Z|runtime|2954e3f8-5160-45e4-a217-331cefef5e54]    rv = self.invoke(ctx)
+[MFLOG|0|2024-10-28T05:06:00.737609Z|runtime|6375447b-b30f-4e67-81bc-cf155d70a602]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2024-10-28T05:06:00.737810Z|runtime|19058c6e-7f9b-4dae-99e9-8762ec5b6615]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2024-10-28T05:06:00.737983Z|runtime|066c8e07-d0e5-4109-87ca-b7a72a55906b]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2024-10-28T05:06:00.738155Z|runtime|2ec8ceeb-7e58-44a4-945d-8fc37999082e]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2024-10-28T05:06:00.738298Z|runtime|64f6be20-7d1e-4d96-a5ee-2b352a6d25f8]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2024-10-28T05:06:00.738433Z|runtime|35a00c9d-008a-4c04-8437-72b96821e381]    return callback(args, kwargs)
+[MFLOG|0|2024-10-28T05:06:00.738528Z|runtime|da5ee01a-edd5-4db6-91b0-c9dc621e18c8]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2024-10-28T05:06:00.738679Z|runtime|76c3a7e2-6f9f-4318-99eb-f2ecb70ce2f3]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2024-10-28T05:06:00.738843Z|runtime|71f224e0-7152-4ea9-9797-16b82f335ba7]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/cli.py", line 469, in step
+[MFLOG|0|2024-10-28T05:06:00.739047Z|runtime|d37e6b7c-fd76-4749-b8f7-cfbaa40b2196]    task.run_step(
+[MFLOG|0|2024-10-28T05:06:00.739237Z|runtime|5af47764-8017-4ade-b9b8-4c2a6931ea7f]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/task.py", line 656, in run_step
+[MFLOG|0|2024-10-28T05:06:00.739460Z|runtime|0afe73ce-9b3d-4fd0-844d-5847424b29b5]    self._exec_step_function(step_func)
+[MFLOG|0|2024-10-28T05:06:00.739655Z|runtime|efecc4a3-72fe-4dd7-92fe-d35bd50ccb19]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2024-10-28T05:06:00.739847Z|runtime|d54b1470-8c28-402b-97b7-a5007dcffa32]    step_function()
+[MFLOG|0|2024-10-28T05:06:00.740036Z|runtime|aba87f48-7cd9-4ec3-93c1-d14a303d6f82]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/flowkuliah.py", line 32, in perkuliahan
+[MFLOG|0|2024-10-28T05:06:00.740225Z|runtime|c424041d-0761-42f6-83ff-6582fe126c0b]    self.next(self.ujian)  # Lanjut ke step ujian jika kehadiran memenuhi 75%
+[MFLOG|0|2024-10-28T05:06:00.740411Z|runtime|0966c1b9-5dcf-463a-8357-c88e1a14d8a1]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/flowspec.py", line 254, in __getattr__
+[MFLOG|0|2024-10-28T05:06:00.740599Z|runtime|60a4a7d3-505e-404e-aba1-0fe67e026bcb]    raise AttributeError("Flow %s has no attribute '%s'" % (self.name, name))
+[MFLOG|0|2024-10-28T05:06:00.740781Z|runtime|bc3d29f1-ce4d-4b80-adac-31920109d329]AttributeError: Flow KuliahFlow has no attribute 'ujian'
+[MFLOG|0|2024-10-28T05:06:00.740971Z|runtime|ad5312cf-9054-408b-8b50-9e274e68cec4]
+[MFLOG|0|2024-10-28T05:06:00.741594Z|runtime|c5ffd43d-9e70-40ae-a0f9-07d7823b8db7]Task failed.

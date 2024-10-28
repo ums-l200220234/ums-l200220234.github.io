@@ -1,0 +1,30 @@
+[MFLOG|0|2024-10-28T04:25:25.018238Z|runtime|a4b29908-d401-40bd-8a37-f0e9b9254fb3]<flow KuliahFlow step start> failed:
+[MFLOG|0|2024-10-28T04:25:25.022133Z|runtime|daa16a10-a3ab-4138-bb34-5582d5cf93e3]    Internal error
+[MFLOG|0|2024-10-28T04:25:25.022835Z|runtime|d06108ac-6116-4fce-a0e9-ee0862052ed2]Traceback (most recent call last):
+[MFLOG|0|2024-10-28T04:25:25.023138Z|runtime|d41098db-f891-488e-9291-a49fcb99c008]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/cli.py", line 1139, in main
+[MFLOG|0|2024-10-28T04:25:25.023290Z|runtime|19f1fceb-9638-48d7-b4ed-518d350e2f65]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2024-10-28T04:25:25.023406Z|runtime|81cdb2a4-8e8b-4a71-91b2-d6b47ac9be49]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2024-10-28T04:25:25.023491Z|runtime|15fede18-c778-49e8-9efa-09dab90b3cb6]    return func(args, kwargs)
+[MFLOG|0|2024-10-28T04:25:25.085493Z|runtime|ae4b797b-3a94-404e-b2ac-152a394b4995]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2024-10-28T04:25:25.085873Z|runtime|44670ff4-2006-48db-8dbe-24a4a415dfca]    return self.main(args, kwargs)
+[MFLOG|0|2024-10-28T04:25:25.086060Z|runtime|9cb16353-39a5-4d3a-9f0e-6e3e95ba8331]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2024-10-28T04:25:25.086168Z|runtime|d55dcd6d-ca89-4e5d-9196-89a6004e8175]    rv = self.invoke(ctx)
+[MFLOG|0|2024-10-28T04:25:25.086346Z|runtime|11a85e3d-0f37-44ab-9577-815a9a82ad60]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2024-10-28T04:25:25.086634Z|runtime|8cde3247-beac-40e6-8c47-ec6c75705b21]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2024-10-28T04:25:25.086831Z|runtime|18bfc89d-a973-4898-8303-348f1d3c22ca]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2024-10-28T04:25:25.087005Z|runtime|f14f42f4-9269-423a-acc8-44709c13a334]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2024-10-28T04:25:25.087160Z|runtime|47563e2a-128a-4e5b-9e9f-d442cd85a015]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2024-10-28T04:25:25.087244Z|runtime|8bcf33a5-5e9b-427d-a49a-76f5a3a16dc4]    return callback(args, kwargs)
+[MFLOG|0|2024-10-28T04:25:25.087453Z|runtime|b117f763-a1c0-46ed-a962-e53110779296]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2024-10-28T04:25:25.087575Z|runtime|ec8d6dc4-b75d-4475-a910-59b290b75e5d]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2024-10-28T04:25:25.087692Z|runtime|74cfbe1f-62d6-47b2-9ca9-184e82d69347]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/cli.py", line 469, in step
+[MFLOG|0|2024-10-28T04:25:25.087775Z|runtime|d7618091-f6a2-4709-9ddf-62de2686eec4]    task.run_step(
+[MFLOG|0|2024-10-28T04:25:25.087924Z|runtime|fd9c4607-b6c3-4a61-8609-647d72bf9c2f]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/task.py", line 656, in run_step
+[MFLOG|0|2024-10-28T04:25:25.088068Z|runtime|7c22f4b3-7f8b-494b-b2c1-3bf0bfc80661]    self._exec_step_function(step_func)
+[MFLOG|0|2024-10-28T04:25:25.088241Z|runtime|68c3a47b-6b4d-4940-9d64-b5e677597b41]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2024-10-28T04:25:25.088383Z|runtime|453ea487-c49c-4ea7-8bda-2d5b6210d53a]    step_function()
+[MFLOG|0|2024-10-28T04:25:25.088538Z|runtime|b14b1ad3-ce03-4c75-a8e8-627d534e1677]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/flowkuliah.py", line 16, in start
+[MFLOG|0|2024-10-28T04:25:25.088702Z|runtime|0e8b2624-4ade-4f31-8645-6285f4e48693]    self.index = 0
+[MFLOG|0|2024-10-28T04:25:25.088854Z|runtime|f8cb3c6a-4081-4188-b278-aa5c21acb2cf]AttributeError: can't set attribute 'index'
+[MFLOG|0|2024-10-28T04:25:25.089015Z|runtime|bf94f924-79d4-424d-bd14-b61b2f187860]
+[MFLOG|0|2024-10-28T04:25:25.089486Z|runtime|849f1cb0-6933-403d-b50e-48aff7587730]Task failed.

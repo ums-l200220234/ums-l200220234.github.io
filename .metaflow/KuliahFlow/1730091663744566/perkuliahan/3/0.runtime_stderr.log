@@ -1,0 +1,30 @@
+[MFLOG|0|2024-10-28T05:01:04.632422Z|runtime|f5fb9311-997f-485b-b87b-2380605777c2]<flow KuliahFlow step perkuliahan> failed:
+[MFLOG|0|2024-10-28T05:01:04.640357Z|runtime|a63448a0-475b-426d-8421-ba5bd68731c8]    Internal error
+[MFLOG|0|2024-10-28T05:01:04.641394Z|runtime|e6f6673c-cda5-4141-998b-504318773489]Traceback (most recent call last):
+[MFLOG|0|2024-10-28T05:01:04.641586Z|runtime|73cf73e6-7932-45ad-b451-e806c7727950]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/cli.py", line 1139, in main
+[MFLOG|0|2024-10-28T05:01:04.641688Z|runtime|fb418e35-4496-486b-b865-f0b58d1ea105]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2024-10-28T05:01:04.641774Z|runtime|f1a8dffa-aa76-4917-83e5-2ed591cf65e3]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2024-10-28T05:01:04.641858Z|runtime|619384db-fecd-4a05-bcd3-abc81646d585]    return func(args, kwargs)
+[MFLOG|0|2024-10-28T05:01:04.699321Z|runtime|8798c2fc-fb96-48ef-83d6-21ca0cf295c5]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2024-10-28T05:01:04.699777Z|runtime|01f812e2-51b7-4102-aa8b-dd77a649c513]    return self.main(args, kwargs)
+[MFLOG|0|2024-10-28T05:01:04.700002Z|runtime|ddffb324-4f99-4c3f-b849-06be33a50d36]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2024-10-28T05:01:04.700206Z|runtime|2a01baa4-2398-4b5d-af91-a4206cd62542]    rv = self.invoke(ctx)
+[MFLOG|0|2024-10-28T05:01:04.700379Z|runtime|ade5c2dd-b6e4-4c39-988f-1fc79221b60e]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2024-10-28T05:01:04.700601Z|runtime|1b97a81a-2316-47c8-9c5b-e53c26f58392]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2024-10-28T05:01:04.700781Z|runtime|5aebec53-51af-48b1-84aa-4ccf7fcf2ad8]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2024-10-28T05:01:04.700940Z|runtime|b7cd668f-db23-4746-b2cf-d0064ae73817]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2024-10-28T05:01:04.701115Z|runtime|2fffa728-35f1-4a0c-896a-bce1ac96cfa0]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2024-10-28T05:01:04.701290Z|runtime|be42e164-99b6-4ca7-b800-5cc2a818faae]    return callback(args, kwargs)
+[MFLOG|0|2024-10-28T05:01:04.701483Z|runtime|9dda2dc0-2ea3-4a62-8633-15546e82d80a]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2024-10-28T05:01:04.701636Z|runtime|f9c4dd56-2016-48e7-b001-c2b318877414]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2024-10-28T05:01:04.701810Z|runtime|8cad4bbf-feec-4e73-a0ef-d92cf2f98556]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/cli.py", line 469, in step
+[MFLOG|0|2024-10-28T05:01:04.701967Z|runtime|d58cfbeb-743e-43c9-9edf-9865a8807c04]    task.run_step(
+[MFLOG|0|2024-10-28T05:01:04.702121Z|runtime|1e7e24bc-b923-4d74-878b-279b06e5e753]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/task.py", line 656, in run_step
+[MFLOG|0|2024-10-28T05:01:04.702277Z|runtime|70f0e004-a127-4965-9bad-d8bb3809f2d8]    self._exec_step_function(step_func)
+[MFLOG|0|2024-10-28T05:01:04.702473Z|runtime|6d5eb7f2-b428-43d0-bb63-df8713d8d0d4]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2024-10-28T05:01:04.702648Z|runtime|8fe3f517-db01-430c-ab82-b5b21093ddad]    step_function()
+[MFLOG|0|2024-10-28T05:01:04.702800Z|runtime|babb05d3-99d2-4a0c-b563-164128641005]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/flowkuliah.py", line 29, in perkuliahan
+[MFLOG|0|2024-10-28T05:01:04.702945Z|runtime|90aa185f-c1fb-4389-b88c-4e30592b28a7]    if hadir:
+[MFLOG|0|2024-10-28T05:01:04.703088Z|runtime|294f7add-aff2-48e7-b1fa-cb79f14fdfec]NameError: name 'hadir' is not defined
+[MFLOG|0|2024-10-28T05:01:04.703233Z|runtime|7cad6ac5-fc64-4208-883d-dd9a37c44df5]
+[MFLOG|0|2024-10-28T05:01:04.703779Z|runtime|5f11cdfe-24eb-458b-bfeb-eaddc29450a0]Task failed.

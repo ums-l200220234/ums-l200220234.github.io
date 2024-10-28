@@ -1,0 +1,30 @@
+[MFLOG|0|2024-10-28T05:30:01.308687Z|runtime|a821cf06-e8c8-4ac7-ae7c-7c8f2d6367be]<flow KuliahFlow step menghitung_nilai_akhir> failed:
+[MFLOG|0|2024-10-28T05:30:01.317105Z|runtime|e09487a6-f6c5-4fa2-971f-fee39e2e24ca]    Internal error
+[MFLOG|0|2024-10-28T05:30:01.318398Z|runtime|48446155-df20-4d3a-9a50-b3b13bde05eb]Traceback (most recent call last):
+[MFLOG|0|2024-10-28T05:30:01.318592Z|runtime|c1122aa3-ba50-49a1-88fc-0239bf31cd64]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/cli.py", line 1139, in main
+[MFLOG|0|2024-10-28T05:30:01.318660Z|runtime|e1b9e78a-fed8-4bed-ae38-0a12a4ec9966]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2024-10-28T05:30:01.318710Z|runtime|179155b1-a35c-4392-8073-509713e79997]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2024-10-28T05:30:01.318757Z|runtime|a29edd52-c963-443c-bc08-82e1e2405ba1]    return func(args, kwargs)
+[MFLOG|0|2024-10-28T05:30:01.318802Z|runtime|550fab86-ca76-42d8-8807-42018efc57e8]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2024-10-28T05:30:01.318848Z|runtime|ddeccf5e-1b38-4d96-98aa-c96ea1a9a78f]    return self.main(args, kwargs)
+[MFLOG|0|2024-10-28T05:30:01.318891Z|runtime|1ecd6883-836c-43fe-81f1-35b1be7ca383]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2024-10-28T05:30:01.318988Z|runtime|5c777d08-cb52-4a3d-93ec-7b0eaa3ee195]    rv = self.invoke(ctx)
+[MFLOG|0|2024-10-28T05:30:01.319237Z|runtime|fcb4725b-fe83-4fb1-b018-439ee1eefc85]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2024-10-28T05:30:01.319408Z|runtime|cb7a700b-3b10-4ec5-97d8-bfd5555e736d]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2024-10-28T05:30:01.319577Z|runtime|7bf28faa-e5b2-4ce8-a064-e38d4a3eb0dc]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2024-10-28T05:30:01.319725Z|runtime|ccc0ab72-d6ce-4c92-8883-fdbb28b38116]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2024-10-28T05:30:01.381469Z|runtime|bfa2204a-69ce-4122-ab18-b31c3d801003]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2024-10-28T05:30:01.381937Z|runtime|6af73055-e36d-4506-8713-8589a002fd31]    return callback(args, kwargs)
+[MFLOG|0|2024-10-28T05:30:01.382321Z|runtime|2e7abd77-37b0-45fb-bac2-73440d0f57d3]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2024-10-28T05:30:01.382485Z|runtime|e2177617-d564-411d-8cfa-d30f885e51e7]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2024-10-28T05:30:01.382586Z|runtime|b1f5d30a-a21f-4dec-8f1f-2640a41f9b7c]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/cli.py", line 469, in step
+[MFLOG|0|2024-10-28T05:30:01.382805Z|runtime|8b2d1e29-7e97-4abe-8328-c903f7478f33]    task.run_step(
+[MFLOG|0|2024-10-28T05:30:01.383026Z|runtime|b3b16225-126f-4ade-bdee-3adc5220c284]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/task.py", line 656, in run_step
+[MFLOG|0|2024-10-28T05:30:01.383282Z|runtime|7e7840b4-9413-478b-b9e0-ed74c1be047a]    self._exec_step_function(step_func)
+[MFLOG|0|2024-10-28T05:30:01.383475Z|runtime|7b8577ae-fa08-45a5-8296-f57f5a4ebd8c]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2024-10-28T05:30:01.383662Z|runtime|4cabfe30-4754-4f02-a8b0-6ce974a5af78]    step_function()
+[MFLOG|0|2024-10-28T05:30:01.383879Z|runtime|559e1164-7009-4632-a78d-3db4c2eb1667]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/flowkuliah.py", line 79, in menghitung_nilai_akhir
+[MFLOG|0|2024-10-28T05:30:01.384130Z|runtime|cfb20ece-b4eb-46ef-838a-73ab7778445a]    print(f"Huruf nilai: {huruf_nilai}")
+[MFLOG|0|2024-10-28T05:30:01.384315Z|runtime|8cbc8136-99a7-43b8-b22b-0a8f803a542b]NameError: name 'huruf_nilai' is not defined
+[MFLOG|0|2024-10-28T05:30:01.384556Z|runtime|204e93c9-ee16-4bfe-9e13-31714013df06]
+[MFLOG|0|2024-10-28T05:30:01.385297Z|runtime|40b42c63-8560-4b29-9e9e-11ddfef1fb74]Task failed.

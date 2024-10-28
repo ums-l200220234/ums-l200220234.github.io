@@ -1,0 +1,5 @@
+[MFLOG|0|2024-10-28T05:01:54.608109Z|runtime|f59c6e46-4126-421b-85ae-36d2efe49c95]<flow KuliahFlow step perkuliahan> failed:
+[MFLOG|0|2024-10-28T05:01:54.613461Z|runtime|5eeb6ae9-eeb2-41ee-8090-e83286292b49]    Invalid self.next() transition detected on line 31:
+[MFLOG|0|2024-10-28T05:01:54.613836Z|runtime|892f4fdc-8ff5-4cb6-9fc2-76abfbf297dc]    Multiple self.next() calls detected in step perkuliahan. Call self.next() only once.
+[MFLOG|0|2024-10-28T05:01:54.678470Z|runtime|6ff53b42-0df1-472a-a011-68282ea47325]
+[MFLOG|0|2024-10-28T05:01:54.679339Z|runtime|6702c91b-7c52-4cca-80da-c7a4bb3bc638]Task failed.

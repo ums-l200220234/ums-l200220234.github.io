@@ -1,0 +1,32 @@
+[MFLOG|0|2024-10-28T05:26:34.652721Z|runtime|5fcb154d-7549-4735-b74a-2dc8cdae3207]<flow KuliahFlow step menghitung_nilai_akhir> failed:
+[MFLOG|0|2024-10-28T05:26:34.658492Z|runtime|017de668-ce86-42ec-9e79-644b5f48b953]    Internal error
+[MFLOG|0|2024-10-28T05:26:34.659472Z|runtime|22df0334-1945-4a45-b5c9-62d6e4f79462]Traceback (most recent call last):
+[MFLOG|0|2024-10-28T05:26:34.659751Z|runtime|04860bf3-cf8b-46ff-92ff-a8df46e60d7a]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/cli.py", line 1139, in main
+[MFLOG|0|2024-10-28T05:26:34.659937Z|runtime|bd1c1fb6-846b-4441-8a6f-402b206870e2]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2024-10-28T05:26:34.660086Z|runtime|a5113523-c5da-4bee-9028-98ce7eddb0b9]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2024-10-28T05:26:34.660250Z|runtime|4514fc2b-0bc2-412f-a932-ef0446f3ae17]    return func(args, kwargs)
+[MFLOG|0|2024-10-28T05:26:34.716929Z|runtime|739a1908-42cf-49a1-804c-3a755c65da48]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2024-10-28T05:26:34.717312Z|runtime|d74ce452-244b-431c-aad1-a0af63d7689d]    return self.main(args, kwargs)
+[MFLOG|0|2024-10-28T05:26:34.717547Z|runtime|00a5ff9f-43a7-4a53-8c57-0422e53c69ae]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2024-10-28T05:26:34.717769Z|runtime|346784a5-d41a-4b65-8dcc-3ad831288f90]    rv = self.invoke(ctx)
+[MFLOG|0|2024-10-28T05:26:34.717980Z|runtime|8dd3d4cb-f9a7-458e-8774-8175e4732e73]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2024-10-28T05:26:34.718194Z|runtime|c0aa1924-b56a-44fb-aeef-66448e4233d7]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2024-10-28T05:26:34.718405Z|runtime|79c2b44f-f2fb-461a-b433-b84373959829]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2024-10-28T05:26:34.718615Z|runtime|5f67145f-9a1a-410c-84e5-544ec0bebe42]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2024-10-28T05:26:34.718838Z|runtime|d7e58e2f-3c2e-4fb9-ba2d-310559aedc90]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2024-10-28T05:26:34.719066Z|runtime|8b25de3c-14f4-4903-a770-8b2b27454562]    return callback(args, kwargs)
+[MFLOG|0|2024-10-28T05:26:34.719212Z|runtime|5566b891-d4f1-405f-b1ad-9f6524fac04a]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2024-10-28T05:26:34.719411Z|runtime|eff01328-61f0-4850-aa32-c29d6b0e2859]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2024-10-28T05:26:34.719625Z|runtime|fdb55bf8-7082-4cf2-a0f7-cde6aed9ce43]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/cli.py", line 469, in step
+[MFLOG|0|2024-10-28T05:26:34.719857Z|runtime|9266ebd9-e27f-4b1f-93db-c17c605997c0]    task.run_step(
+[MFLOG|0|2024-10-28T05:26:34.720107Z|runtime|4c7716ad-eca6-42b2-b4c7-0ac79b027ba3]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/task.py", line 656, in run_step
+[MFLOG|0|2024-10-28T05:26:34.720343Z|runtime|ee74ced5-d1d2-45bc-81dd-2d028adafbb7]    self._exec_step_function(step_func)
+[MFLOG|0|2024-10-28T05:26:34.720567Z|runtime|02116bdd-1d10-4598-8a6b-75e88da6b6b0]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2024-10-28T05:26:34.720823Z|runtime|03222bfc-195a-44a8-8250-45bb5fb27740]    step_function()
+[MFLOG|0|2024-10-28T05:26:34.721053Z|runtime|8cc883cc-7783-4793-9fdd-f721fe4f795f]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/flowkuliah.py", line 59, in menghitung_nilai_akhir
+[MFLOG|0|2024-10-28T05:26:34.721286Z|runtime|d4433c56-7109-4e4f-9a49-82c1f88470df]    persen_kehadiran = self.kehadiran / self.total_pertemuan  100  # Menghitung persentase kehadiran
+[MFLOG|0|2024-10-28T05:26:34.721514Z|runtime|5a3dcd92-27d3-4e6a-b8fe-ada8d9977cd5]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/flowspec.py", line 254, in __getattr__
+[MFLOG|0|2024-10-28T05:26:34.721759Z|runtime|faf3306b-5bd9-4578-8b4e-35800e4ce6ad]    raise AttributeError("Flow %s has no attribute '%s'" % (self.name, name))
+[MFLOG|0|2024-10-28T05:26:34.721924Z|runtime|f8372494-2774-41c9-835a-d23672202c5a]AttributeError: Flow KuliahFlow has no attribute 'total_pertemuan'
+[MFLOG|0|2024-10-28T05:26:34.722117Z|runtime|fb234d6f-d4f5-4bc5-a96b-3a3e53a6cd26]
+[MFLOG|0|2024-10-28T05:26:34.722784Z|runtime|2909a4f4-f1ff-48d6-9ee6-785283ac10e9]Task failed.

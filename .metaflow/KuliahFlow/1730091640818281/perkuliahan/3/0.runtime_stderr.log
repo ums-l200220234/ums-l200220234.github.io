@@ -1,0 +1,30 @@
+[MFLOG|0|2024-10-28T05:00:41.749084Z|runtime|d7460f30-b170-4faf-98f9-10d69b2c7f18]<flow KuliahFlow step perkuliahan> failed:
+[MFLOG|0|2024-10-28T05:00:41.756036Z|runtime|786ad4aa-a1b6-44e8-94f6-0ab3a5d03183]    Internal error
+[MFLOG|0|2024-10-28T05:00:41.756926Z|runtime|598fa777-fcaa-438c-a02b-6aa30085c942]Traceback (most recent call last):
+[MFLOG|0|2024-10-28T05:00:41.757155Z|runtime|0a0a9ff6-9af7-4b1c-adaf-bc8911fb76ec]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/cli.py", line 1139, in main
+[MFLOG|0|2024-10-28T05:00:41.757261Z|runtime|03aafb37-fb3e-4954-b3aa-4ee477c54df5]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2024-10-28T05:00:41.757348Z|runtime|ec6f3336-9300-4a69-843f-6b9b555ca5fa]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2024-10-28T05:00:41.757466Z|runtime|1da042ef-d7cc-4267-82f1-74d5d4f72f4c]    return func(args, kwargs)
+[MFLOG|0|2024-10-28T05:00:41.823299Z|runtime|80b226d8-3031-4280-ab0d-30a3b68827f9]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2024-10-28T05:00:41.823633Z|runtime|2084f1cb-91d2-412b-bc95-1d8a5782be97]    return self.main(args, kwargs)
+[MFLOG|0|2024-10-28T05:00:41.823776Z|runtime|d60fb142-57fe-438c-b79a-ce87c12d2dac]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2024-10-28T05:00:41.823964Z|runtime|558dec2a-68a3-4f03-8236-ad94327adb83]    rv = self.invoke(ctx)
+[MFLOG|0|2024-10-28T05:00:41.824101Z|runtime|d076c945-e1a6-4530-b2cd-63a7d3762e32]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2024-10-28T05:00:41.824222Z|runtime|dce17677-621f-4409-b783-3c47a9ed57b6]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2024-10-28T05:00:41.824393Z|runtime|68ea95cf-3e03-461e-b1ad-d73480910725]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2024-10-28T05:00:41.824529Z|runtime|fc2c6ddb-474c-439d-9518-f82d4b5d57f7]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2024-10-28T05:00:41.824670Z|runtime|6916d1fa-2b4a-4ee3-9e03-ce910f37f6a1]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2024-10-28T05:00:41.824808Z|runtime|ec6e1ee7-81e0-437d-8048-f0c6b84824de]    return callback(args, kwargs)
+[MFLOG|0|2024-10-28T05:00:41.824947Z|runtime|9e042ee3-f6aa-413c-ae2f-3eee625eab33]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2024-10-28T05:00:41.825090Z|runtime|728b91cf-3940-47e3-8523-7ff4c2439b94]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2024-10-28T05:00:41.825208Z|runtime|810ac62d-fc7f-4964-aeb0-afafd564e1c6]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/cli.py", line 469, in step
+[MFLOG|0|2024-10-28T05:00:41.825310Z|runtime|6f6fbf9b-cbd8-47ac-955e-71b1125b4b10]    task.run_step(
+[MFLOG|0|2024-10-28T05:00:41.825441Z|runtime|fe6df93c-4d1b-4df8-8115-f736b2421ea7]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/task.py", line 656, in run_step
+[MFLOG|0|2024-10-28T05:00:41.825562Z|runtime|ba5708d3-da90-4416-b544-919e8be2ae12]    self._exec_step_function(step_func)
+[MFLOG|0|2024-10-28T05:00:41.825713Z|runtime|f9f0bc00-2e59-4eee-9248-fd8a5e30a52d]  File "/home/fad/anaconda3/envs/ipsd/lib/python3.10/site-packages/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2024-10-28T05:00:41.825787Z|runtime|770cf88a-de84-424b-a49c-a24b66e3507e]    step_function()
+[MFLOG|0|2024-10-28T05:00:41.825908Z|runtime|fd4f30a6-63d9-427f-88a2-33564cfa2d73]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/flowkuliah.py", line 30, in perkuliahan
+[MFLOG|0|2024-10-28T05:00:41.826044Z|runtime|391a3c58-6f56-4c1a-8400-5620570e5a29]    kehadiran += 1
+[MFLOG|0|2024-10-28T05:00:41.826159Z|runtime|fa3c8c81-b0bb-4077-ad78-862c10deca18]UnboundLocalError: local variable 'kehadiran' referenced before assignment
+[MFLOG|0|2024-10-28T05:00:41.826255Z|runtime|8b857ba4-e38a-4de3-a4d7-4e04b5c958c9]
+[MFLOG|0|2024-10-28T05:00:41.826642Z|runtime|7289840e-d912-4508-ac37-d3dcfd52a4a6]Task failed.

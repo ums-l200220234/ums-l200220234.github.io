@@ -1,2 +1,3 @@
-Nama: Fadhil Erdya Qashmal
+Nama: Fadhil Erdya Qashmal \n
+
 NIM: L200220234

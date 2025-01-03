@@ -1,0 +1,47 @@
+[MFLOG|0|2025-01-03T17:50:34.744727Z|runtime|15837fda-29c0-4f91-a7f6-86b2b0cea37c]<flow KMeansFlow step train_kmeans[2] (input: 7)> failed:
+[MFLOG|0|2025-01-03T17:50:34.765140Z|runtime|5971f055-c73b-4c8e-865a-bfaa372ffd3d]    Internal error
+[MFLOG|0|2025-01-03T17:50:34.768006Z|runtime|2478b42a-ca10-4582-99ee-f56109e9628a]Traceback (most recent call last):
+[MFLOG|0|2025-01-03T17:50:34.768571Z|runtime|f8f8fab1-36c6-4e35-b341-5994551c25e1]  File "/tmp/tmp39jshahw/metaflow/cli.py", line 1166, in main
+[MFLOG|0|2025-01-03T17:50:34.768953Z|runtime|56c7e3db-bd68-49b0-9f9c-5adc9bef9f24]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2025-01-03T17:50:34.769299Z|runtime|7fabd5ce-25e7-4795-9fe7-1ad9a17983f3]  File "/tmp/tmp39jshahw/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2025-01-03T17:50:34.769642Z|runtime|faa55f7b-2593-40ba-ae97-51625aa42884]    return func(args, kwargs)
+[MFLOG|0|2025-01-03T17:50:34.996970Z|runtime|55807858-11b0-4535-a429-c79ef1093991][KILLED BY ORCHESTRATOR]
+[MFLOG|0|2025-01-03T17:50:35.104334Z|runtime|98613d6d-fc1a-4d33-85cc-3ae4b4122521]           ^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:35.104407Z|runtime|7c08ed56-1107-4c37-a8d2-3bc6d557eb6c]  File "/tmp/tmp39jshahw/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2025-01-03T17:50:35.104451Z|runtime|46e7d37a-ebfe-41c3-9ac1-5500731016d3]    return self.main(args, kwargs)
+[MFLOG|0|2025-01-03T17:50:35.104507Z|runtime|c7189b89-ad09-416a-adae-596ca318216e]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:35.104545Z|runtime|96274e34-cbcc-46d3-bf24-7cd543290757]  File "/tmp/tmp39jshahw/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2025-01-03T17:50:35.104601Z|runtime|5cc31570-146d-4f5c-839b-87d6ce55243b]    rv = self.invoke(ctx)
+[MFLOG|0|2025-01-03T17:50:35.104643Z|runtime|aa90b5b3-6c0e-4424-8e67-6bf657ddbd66]         ^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:35.104674Z|runtime|36bdec29-04b5-4b56-b463-74c40f075f96]  File "/tmp/tmp39jshahw/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2025-01-03T17:50:35.104726Z|runtime|fdd356c2-2827-4764-8d27-4596d874134f]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2025-01-03T17:50:35.104787Z|runtime|b420dcfa-8854-4404-9212-07fb41ce8839]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:35.104848Z|runtime|00c486e4-3af4-4bdc-a0c5-e05d2f178746]  File "/tmp/tmp39jshahw/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2025-01-03T17:50:35.104890Z|runtime|a1e35e0e-3b20-4001-a040-b6b934fea14c]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2025-01-03T17:50:35.104923Z|runtime|8a94d2a0-f83e-428f-b752-492622effde3]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:35.104972Z|runtime|ee6ae582-8f7f-4024-b537-c7ada2f6194d]  File "/tmp/tmp39jshahw/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2025-01-03T17:50:35.105040Z|runtime|b22d4650-199c-4e0f-9483-ea2a9f0eadc1]    return callback(args, kwargs)
+[MFLOG|0|2025-01-03T17:50:35.105106Z|runtime|918a1693-8801-4367-a2cc-d36c952ae895]           ^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:35.105148Z|runtime|5e0ffade-8286-4d14-942a-4881439d486c]  File "/tmp/tmp39jshahw/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2025-01-03T17:50:35.105185Z|runtime|70297e20-eff5-43cd-8688-6632aa385015]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2025-01-03T17:50:35.105222Z|runtime|f9d70b20-c556-44c4-be49-5f8eeec2191e]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:35.105277Z|runtime|103f0d04-8d77-4ea2-a2d3-fc6aa58bc2d0]  File "/tmp/tmp39jshahw/metaflow/cli.py", line 469, in step
+[MFLOG|0|2025-01-03T17:50:35.105336Z|runtime|409c4dc9-2589-4cb1-a685-c132439d7e65]    task.run_step(
+[MFLOG|0|2025-01-03T17:50:35.105396Z|runtime|087e1b4d-3347-48ce-ad12-65d22b216059]  File "/tmp/tmp39jshahw/metaflow/task.py", line 653, in run_step
+[MFLOG|0|2025-01-03T17:50:35.105555Z|runtime|8c06c08d-6b83-4cd4-af88-01d3ea162758]    self._exec_step_function(step_func)
+[MFLOG|0|2025-01-03T17:50:35.105618Z|runtime|eecb4d36-b516-4432-9556-d09c68fe1015]  File "/tmp/tmp39jshahw/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2025-01-03T17:50:35.105677Z|runtime|5946b0bd-0d5a-4438-9739-1d135aabbf62]    step_function()
+[MFLOG|0|2025-01-03T17:50:35.105720Z|runtime|a5fbe9a4-6c70-4583-ba03-81e9199b6d8a]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/Kmeans.py", line 25, in train_kmeans
+[MFLOG|0|2025-01-03T17:50:35.105758Z|runtime|c53efc2a-8b9e-4d4d-912b-e20c16848ccd]    model.fit(mtx_dense)
+[MFLOG|0|2025-01-03T17:50:35.105816Z|runtime|d4669a6d-985c-4b13-baf9-cc56bc527e68]  File "/home/fad/micromamba/envs/metaflow/linux-64/049dea74e0f9ab3/lib/python3.12/site-packages/sklearn/base.py", line 1473, in wrapper
+[MFLOG|0|2025-01-03T17:50:35.105876Z|runtime|aa748218-92e6-4096-9fcb-60bfd52f2caa]    return fit_method(estimator, args, kwargs)
+[MFLOG|0|2025-01-03T17:50:35.105957Z|runtime|294e7782-a3f0-43be-9c2d-386df44207af]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:35.106021Z|runtime|ce3bf9b3-9178-4441-998c-daf1d9d3fd35]  File "/home/fad/micromamba/envs/metaflow/linux-64/049dea74e0f9ab3/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py", line 1473, in fit
+[MFLOG|0|2025-01-03T17:50:35.106063Z|runtime|abcb6b35-cc40-400a-b820-6f1e68289df3]    self._check_params_vs_input(X)
+[MFLOG|0|2025-01-03T17:50:35.106111Z|runtime|99d4c731-8288-4422-b4f9-681dc432509e]  File "/home/fad/micromamba/envs/metaflow/linux-64/049dea74e0f9ab3/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py", line 1414, in _check_params_vs_input
+[MFLOG|0|2025-01-03T17:50:35.106186Z|runtime|dee727ca-2a0a-4afe-9668-cc7630ef1f00]    super()._check_params_vs_input(X, default_n_init=10)
+[MFLOG|0|2025-01-03T17:50:35.106274Z|runtime|0bab227a-9f0a-4178-a4f9-71cf15b22b4b]  File "/home/fad/micromamba/envs/metaflow/linux-64/049dea74e0f9ab3/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py", line 878, in _check_params_vs_input
+[MFLOG|0|2025-01-03T17:50:35.106320Z|runtime|04bddf2d-65de-46cc-ab7a-85e2fd813fa5]    raise ValueError(
+[MFLOG|0|2025-01-03T17:50:35.106373Z|runtime|6cdecfca-fa66-4eb2-89b7-fac76aef40f0]ValueError: n_samples=4 should be >= n_clusters=7.
+[MFLOG|0|2025-01-03T17:50:35.106461Z|runtime|3a82b5cc-4ab9-41c1-b2c6-f36ee248e20d]
+[MFLOG|0|2025-01-03T17:50:35.106691Z|runtime|f31d2dd3-1f36-4143-bc72-fe262bb41e28]Task failed.

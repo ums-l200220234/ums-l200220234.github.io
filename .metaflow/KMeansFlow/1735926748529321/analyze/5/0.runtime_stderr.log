@@ -1,0 +1,40 @@
+[MFLOG|0|2025-01-03T17:52:38.203281Z|runtime|3c2260a9-1b89-4df7-a0ae-c12bdcad876e]<flow KMeansFlow step analyze[0] (input: 2)> failed:
+[MFLOG|0|2025-01-03T17:52:38.216020Z|runtime|421eba4b-6e52-4cd4-aa2c-e2d1f3908107]    Internal error
+[MFLOG|0|2025-01-03T17:52:38.217782Z|runtime|aa5655e9-0b7c-43f9-8a9b-781aee01621b]Traceback (most recent call last):
+[MFLOG|0|2025-01-03T17:52:38.218294Z|runtime|af384d14-284f-4457-a8bd-64e08cc9d64d]  File "/tmp/tmpq4apvx0q/metaflow/cli.py", line 1166, in main
+[MFLOG|0|2025-01-03T17:52:38.218696Z|runtime|f4f0991c-7db8-4d00-bc2c-3c52a3bd1f47]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2025-01-03T17:52:38.218986Z|runtime|a8202f0d-fbf1-4143-ba93-45e4c297fd6e]  File "/tmp/tmpq4apvx0q/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2025-01-03T17:52:38.219299Z|runtime|ec268f2b-fe83-4901-8802-faafe849617a]    return func(args, kwargs)
+[MFLOG|0|2025-01-03T17:52:38.219607Z|runtime|e78253e2-42f9-47fc-8e77-e3424ca3954b]           ^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:52:38.219830Z|runtime|8992f7a4-e776-4b7c-9eaf-cda46c4ba948]  File "/tmp/tmpq4apvx0q/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2025-01-03T17:52:38.220083Z|runtime|ce123576-9a2f-45ca-afb6-5aee861a7152]    return self.main(args, kwargs)
+[MFLOG|0|2025-01-03T17:52:38.220376Z|runtime|a5287122-5004-4eb8-a9c9-36595c3ee1cf]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:52:38.220668Z|runtime|cf6bfb88-02eb-436d-9249-0d791be02e91]  File "/tmp/tmpq4apvx0q/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2025-01-03T17:52:38.220870Z|runtime|fea03746-9e4a-425a-953a-4177b0d29e01]    rv = self.invoke(ctx)
+[MFLOG|0|2025-01-03T17:52:38.221061Z|runtime|3c4417a6-ddc5-4711-8951-a6ff67a0d896]         ^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:52:38.221251Z|runtime|cc1c8662-96bd-40d9-808b-167ca3326937]  File "/tmp/tmpq4apvx0q/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2025-01-03T17:52:38.221485Z|runtime|32057746-1bbf-4d57-9905-33c41decc04d]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2025-01-03T17:52:38.221829Z|runtime|36333c54-fa4d-42fe-978e-1391735f1bf5]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:52:38.222134Z|runtime|e78f5152-1401-4a2b-9f5b-93fa9df70704]  File "/tmp/tmpq4apvx0q/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2025-01-03T17:52:38.222448Z|runtime|935b055c-54b5-48fd-b5b9-7058ddcdde95]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2025-01-03T17:52:38.222739Z|runtime|d48350ae-0fe2-488b-8d2c-b57991103bd1]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:52:38.222990Z|runtime|7efbbdde-f687-4cf7-a7ca-b010c4adf5b1]  File "/tmp/tmpq4apvx0q/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2025-01-03T17:52:38.223136Z|runtime|a09a9817-b977-44f3-988f-bc096b5c6174]    return callback(args, kwargs)
+[MFLOG|0|2025-01-03T17:52:38.223209Z|runtime|c8110707-1118-46f5-ad79-e74fa43e3e85]           ^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:52:38.223275Z|runtime|154ccf53-2501-444a-86b0-96acae82cdd7]  File "/tmp/tmpq4apvx0q/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2025-01-03T17:52:38.223361Z|runtime|a4fdff13-f05e-4219-b12a-17352f1e9f84]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2025-01-03T17:52:38.223435Z|runtime|01b23f70-8e9e-4bb5-9558-bcada644f1ab]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:52:38.223509Z|runtime|f34ecbc2-5e88-41b8-a3e7-343d1afe1fe2]  File "/tmp/tmpq4apvx0q/metaflow/cli.py", line 469, in step
+[MFLOG|0|2025-01-03T17:52:38.223591Z|runtime|138582d0-9461-4815-89f5-927943e8663a]    task.run_step(
+[MFLOG|0|2025-01-03T17:52:38.223677Z|runtime|da60be08-e80c-4a3b-a720-b0eb4425f3c0]  File "/tmp/tmpq4apvx0q/metaflow/task.py", line 653, in run_step
+[MFLOG|0|2025-01-03T17:52:38.223759Z|runtime|50605c76-88de-44c3-99b1-7212978223ea]    self._exec_step_function(step_func)
+[MFLOG|0|2025-01-03T17:52:38.223851Z|runtime|6a9161e6-9530-47dc-bd49-3746a0d76a15]  File "/tmp/tmpq4apvx0q/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2025-01-03T17:52:38.224010Z|runtime|07b61590-978b-4a0c-a3e7-9cdf6ea84f88]    step_function()
+[MFLOG|0|2025-01-03T17:52:38.224128Z|runtime|7249581f-78cd-4b36-9cf3-d29771d9b438]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/Kmeans.py", line 31, in analyze
+[MFLOG|0|2025-01-03T17:52:38.224215Z|runtime|f716ab60-eb44-40ce-9fe8-3d20a1f1a9e3]    self.top = top_data_points(self.k, self.clusters, self.mtx, self.docs)
+[MFLOG|0|2025-01-03T17:52:38.224309Z|runtime|550a1bce-07d5-4ad6-9f36-10c6e569a54f]                                                                ^^^^^^^^^
+[MFLOG|0|2025-01-03T17:52:38.224415Z|runtime|a486834c-94f4-40ff-bef0-c9a40f17f443]  File "/tmp/tmpq4apvx0q/metaflow/flowspec.py", line 254, in __getattr__
+[MFLOG|0|2025-01-03T17:52:38.224507Z|runtime|fb565dca-bc7a-4878-beea-3304d273d56c]    raise AttributeError("Flow %s has no attribute '%s'" % (self.name, name))
+[MFLOG|0|2025-01-03T17:52:38.224585Z|runtime|f29c64dc-0806-414f-8a84-3823af1dd9c9]AttributeError: Flow KMeansFlow has no attribute 'docs'
+[MFLOG|0|2025-01-03T17:52:38.224682Z|runtime|8e2ccd2a-588c-4cd7-a375-35e7726b5621]
+[MFLOG|0|2025-01-03T17:52:38.569505Z|runtime|c59d1377-e331-415c-ae54-8b2723766a76]Task failed.

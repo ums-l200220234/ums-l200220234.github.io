@@ -1,0 +1,49 @@
+[MFLOG|0|2025-01-03T18:16:35.463962Z|runtime|69415685-c747-449b-a581-5042c849f17b][nltk_data] Downloading package punkt to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T18:16:35.501193Z|runtime|dc6a4a96-bcb5-4ded-bb43-e4c4ac692a5e][nltk_data]   Package punkt is already up-to-date!
+[MFLOG|0|2025-01-03T18:16:35.512597Z|runtime|118f7c4e-392b-41ac-b4fe-8c70744127f6][nltk_data] Downloading package punkt_tab to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T18:16:35.513328Z|runtime|336d70f5-c1af-443c-bcf9-9be2fd23a2f1][nltk_data]   Package punkt_tab is already up-to-date!
+[MFLOG|0|2025-01-03T18:16:35.550370Z|runtime|250b83cc-6595-44c0-9ed5-5c5cdcb24220][nltk_data] Downloading package wordnet to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T18:16:35.550807Z|runtime|f8a79edb-de7c-4706-b61d-672c6ba1f609][nltk_data]   Package wordnet is already up-to-date!
+[MFLOG|0|2025-01-03T18:16:35.612910Z|runtime|1dd7dfd7-cf76-4ee3-aed5-d473e9af0d44][nltk_data] Downloading package omw-1.4 to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T18:16:35.613509Z|runtime|213b197c-9131-42a8-9718-95c2c94c786c][nltk_data]   Package omw-1.4 is already up-to-date!
+[MFLOG|0|2025-01-03T18:16:38.980943Z|runtime|e8983863-3e07-4c43-81d2-8729569c38ba]<flow KMeansFlow step start> failed:
+[MFLOG|0|2025-01-03T18:16:38.990853Z|runtime|07a075b9-1746-43e9-bc17-4d91ebda5fcc]    Internal error
+[MFLOG|0|2025-01-03T18:16:38.996040Z|runtime|f061b466-de5a-4bc7-9734-a1746136715d]Traceback (most recent call last):
+[MFLOG|0|2025-01-03T18:16:38.996375Z|runtime|d90db07f-9a1a-4bc2-9968-f48a77de9639]  File "/tmp/tmpbgrxcc4j/metaflow/cli.py", line 1166, in main
+[MFLOG|0|2025-01-03T18:16:38.996503Z|runtime|39b86db2-b6e2-40f8-8526-9f2d522a5e78]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2025-01-03T18:16:38.996593Z|runtime|997f43af-c9f3-4dff-9a22-8eaa12e18376]  File "/tmp/tmpbgrxcc4j/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2025-01-03T18:16:38.996653Z|runtime|9b41ad21-3646-4722-bc89-954856f1017d]    return func(args, kwargs)
+[MFLOG|0|2025-01-03T18:16:39.929559Z|runtime|eb0b317e-8de2-4e0d-8040-bba5a1f99592]           ^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:16:39.929851Z|runtime|ee1dea82-c0c1-4337-989b-a1300c2cd2f1]  File "/tmp/tmpbgrxcc4j/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2025-01-03T18:16:39.930023Z|runtime|f23db966-637d-48a1-a57c-3785d18491b5]    return self.main(args, kwargs)
+[MFLOG|0|2025-01-03T18:16:39.930112Z|runtime|08b94beb-10f1-4656-a797-3ee82efe939d]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:16:39.930197Z|runtime|a9c1ef21-25bb-4326-8863-a3df3c848786]  File "/tmp/tmpbgrxcc4j/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2025-01-03T18:16:39.930280Z|runtime|82fa509f-cb7d-41f6-a3f9-0b2f4a70642e]    rv = self.invoke(ctx)
+[MFLOG|0|2025-01-03T18:16:39.930332Z|runtime|31a8b653-3402-4ae5-b80d-c408be6e60f7]         ^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:16:39.930423Z|runtime|e30e2922-1102-4c67-be29-f39ff775c59b]  File "/tmp/tmpbgrxcc4j/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2025-01-03T18:16:39.930545Z|runtime|a0ea2578-48ec-404e-8966-4b0699607797]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2025-01-03T18:16:39.930663Z|runtime|8bce9daa-bfed-4e79-963a-ffdff961e149]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:16:39.930742Z|runtime|e1ef315b-4c76-4c44-9f4f-e599bfba5deb]  File "/tmp/tmpbgrxcc4j/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2025-01-03T18:16:39.930794Z|runtime|70d9761c-9085-426f-9473-669eb7258af9]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2025-01-03T18:16:39.930854Z|runtime|83195af2-776e-4142-a59e-434ba996d145]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:16:39.930949Z|runtime|26863794-e5ae-49a3-bc0b-caa7293a0611]  File "/tmp/tmpbgrxcc4j/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2025-01-03T18:16:39.931029Z|runtime|c427e1c7-b5f9-40dc-a72f-8a72712c1076]    return callback(args, kwargs)
+[MFLOG|0|2025-01-03T18:16:39.931143Z|runtime|e40007f7-8cc0-4c5e-aa8f-56692efa42cd]           ^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:16:39.931259Z|runtime|f9a3c77f-f28b-43b6-a4be-1bb6fcaee8a0]  File "/tmp/tmpbgrxcc4j/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2025-01-03T18:16:39.931375Z|runtime|453cd5f8-cdc5-4653-872b-f739d96b74b9]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2025-01-03T18:16:39.931494Z|runtime|f3935774-f597-4937-ac93-549197546a95]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:16:39.931573Z|runtime|f2d0a7e8-3198-494f-b7f7-a8ea359897ba]  File "/tmp/tmpbgrxcc4j/metaflow/cli.py", line 469, in step
+[MFLOG|0|2025-01-03T18:16:39.931623Z|runtime|8cb75978-bbe2-4bc6-98d9-a88e665ca314]    task.run_step(
+[MFLOG|0|2025-01-03T18:16:39.931711Z|runtime|e243dfde-7de6-4095-a301-cc9ddfb1b23b]  File "/tmp/tmpbgrxcc4j/metaflow/task.py", line 653, in run_step
+[MFLOG|0|2025-01-03T18:16:39.931895Z|runtime|ee467051-fc30-4cea-800f-39a172f0d853]    self._exec_step_function(step_func)
+[MFLOG|0|2025-01-03T18:16:39.931990Z|runtime|ef145fc6-6627-4409-94d5-c362825228a9]  File "/tmp/tmpbgrxcc4j/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2025-01-03T18:16:39.932067Z|runtime|875b77f3-965f-4e5b-a8ee-8e097405c548]    step_function()
+[MFLOG|0|2025-01-03T18:16:39.932145Z|runtime|94082640-62a7-4eee-85fa-6d03a44d4df5]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/Kmeans.py", line 14, in start
+[MFLOG|0|2025-01-03T18:16:39.932237Z|runtime|039d43af-915a-4c2f-a4e7-5c506149223f]    self.mtx, self.cols = preprocessing.scale_data(docs)
+[MFLOG|0|2025-01-03T18:16:39.932337Z|runtime|8a850883-d601-4917-9247-6762ccdd79c5]                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:16:39.932451Z|runtime|cb68c1f6-a745-47a7-a97f-57be511a2692]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/preprocessing.py", line 46, in scale_data
+[MFLOG|0|2025-01-03T18:16:39.932558Z|runtime|af597b90-2d6e-4d5c-a80a-92fd5ea3bb74]    vec = CountVectorizer(min_df=5,max_df=0.9,binary=binary)
+[MFLOG|0|2025-01-03T18:16:39.932665Z|runtime|ecb14802-a137-4586-b1e0-9908abf2da33]                                                     ^^^^^^
+[MFLOG|0|2025-01-03T18:16:39.932737Z|runtime|03ce5bf5-2f3e-4ac4-a5bc-5188b039b851]NameError: name 'binary' is not defined
+[MFLOG|0|2025-01-03T18:16:39.932823Z|runtime|a3418ae4-f1e5-4810-b802-05bcd96af445]
+[MFLOG|0|2025-01-03T18:16:39.933408Z|runtime|729c3a9c-b9c5-4047-b6a7-fabf3c8fd2bf]Task failed.

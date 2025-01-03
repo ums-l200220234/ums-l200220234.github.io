@@ -1,0 +1,54 @@
+[MFLOG|0|2025-01-03T18:17:28.411336Z|runtime|a8fe6821-7f02-4ed7-a13d-77b35d2f3862][nltk_data] Downloading package punkt to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T18:17:28.443747Z|runtime|c65d52cd-595e-443d-8fa7-d519dbd69f83][nltk_data]   Package punkt is already up-to-date!
+[MFLOG|0|2025-01-03T18:17:28.444063Z|runtime|6553271f-2c31-461a-8977-9a5e6270bd08][nltk_data] Downloading package punkt_tab to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T18:17:28.457914Z|runtime|8facd2f7-ce37-434d-9462-3c0189511e76][nltk_data]   Package punkt_tab is already up-to-date!
+[MFLOG|0|2025-01-03T18:17:28.503335Z|runtime|394c23a0-0c32-4375-9b66-c580a11c710b][nltk_data] Downloading package wordnet to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T18:17:28.503861Z|runtime|04874077-605f-4dbc-927f-1a972d9a835a][nltk_data]   Package wordnet is already up-to-date!
+[MFLOG|0|2025-01-03T18:17:28.559903Z|runtime|6a0bb676-9e97-402d-8639-e24207cf34f5][nltk_data] Downloading package omw-1.4 to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T18:17:28.560353Z|runtime|1500219e-79ae-4ccc-bde4-6e6a6392c6ac][nltk_data]   Package omw-1.4 is already up-to-date!
+[MFLOG|0|2025-01-03T18:17:31.919577Z|runtime|c55cc767-2c1d-44eb-80f2-6c0cc1b39730]<flow KMeansFlow step start> failed:
+[MFLOG|0|2025-01-03T18:17:31.927207Z|runtime|ce256e52-3db7-476c-a8eb-d15987cc0a51]    Internal error
+[MFLOG|0|2025-01-03T18:17:31.930703Z|runtime|5bcf284b-45c1-461c-9d46-d01bcc50b5ea]Traceback (most recent call last):
+[MFLOG|0|2025-01-03T18:17:31.931056Z|runtime|c87936e5-a238-4dd3-a97d-ab9c5d175433]  File "/tmp/tmp7vgx7oq7/metaflow/cli.py", line 1166, in main
+[MFLOG|0|2025-01-03T18:17:31.931175Z|runtime|138ce81e-652b-446f-b855-1d48c83978de]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2025-01-03T18:17:31.931276Z|runtime|85e159c4-23b9-43d0-b058-9fa7233059ae]  File "/tmp/tmp7vgx7oq7/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2025-01-03T18:17:31.931376Z|runtime|4fd52b9d-0f51-4e9c-9663-eb17f865c6fe]    return func(args, kwargs)
+[MFLOG|0|2025-01-03T18:17:31.931941Z|runtime|f81f902c-cc59-43ce-9c67-5bbbec12384c]           ^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:17:31.932699Z|runtime|653b53e6-5905-443a-a2f6-8c4c0c0531bb]  File "/tmp/tmp7vgx7oq7/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2025-01-03T18:17:31.932921Z|runtime|82d3d278-8ccf-4619-906b-ae393591a833]    return self.main(args, kwargs)
+[MFLOG|0|2025-01-03T18:17:31.933083Z|runtime|77a192f5-95c5-47d8-861b-40778c24c76c]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:17:31.933190Z|runtime|0a6486f3-b869-4681-b234-6dcdeef4617d]  File "/tmp/tmp7vgx7oq7/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2025-01-03T18:17:31.933397Z|runtime|0eb25a84-17ba-42c3-b35c-ed00822adf25]    rv = self.invoke(ctx)
+[MFLOG|0|2025-01-03T18:17:31.933615Z|runtime|10f83771-76f8-41d4-b801-b18fbcb27264]         ^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:17:31.933781Z|runtime|37342244-8d09-41c5-82cb-1e1b89a5186c]  File "/tmp/tmp7vgx7oq7/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2025-01-03T18:17:31.933990Z|runtime|c1edffc2-d1b1-4eb9-8dd8-750ee99d72f8]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2025-01-03T18:17:31.934125Z|runtime|f6e21fb6-2a20-4352-8ac6-91bc63be8363]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:17:31.934287Z|runtime|814cc69c-fb6f-4121-9274-f5e3d4ab57c4]  File "/tmp/tmp7vgx7oq7/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2025-01-03T18:17:31.934413Z|runtime|ce1db3c4-7426-4847-94b8-9aadece729c1]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2025-01-03T18:17:31.934696Z|runtime|018953f4-cb79-4397-9d28-a9265d7f1039]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:17:31.934784Z|runtime|014be9ec-464d-494b-b85c-14a7cabc789c]  File "/tmp/tmp7vgx7oq7/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2025-01-03T18:17:31.934858Z|runtime|3ddf7acf-1277-4d5e-b490-5d2745a503e2]    return callback(args, kwargs)
+[MFLOG|0|2025-01-03T18:17:32.974618Z|runtime|221a8c1e-bc10-4f31-879a-6f8a2932fd0c]           ^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:17:32.975043Z|runtime|1177a781-6fd1-4716-8eed-b91bdbe09ed3]  File "/tmp/tmp7vgx7oq7/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2025-01-03T18:17:32.975243Z|runtime|f142f5d2-3382-4bd2-b69e-b3a1efd2c8e4]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2025-01-03T18:17:32.975420Z|runtime|31e518b8-b7b8-4e11-a918-aab6ef6ea4c2]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:17:32.975602Z|runtime|65445cf4-3be8-4434-818d-b981501a33d1]  File "/tmp/tmp7vgx7oq7/metaflow/cli.py", line 469, in step
+[MFLOG|0|2025-01-03T18:17:32.975802Z|runtime|c8d68ead-85e6-4e31-b7db-fdfa4260bac7]    task.run_step(
+[MFLOG|0|2025-01-03T18:17:32.976006Z|runtime|48249f27-285d-4cf1-8657-e8b43fec5266]  File "/tmp/tmp7vgx7oq7/metaflow/task.py", line 653, in run_step
+[MFLOG|0|2025-01-03T18:17:32.976206Z|runtime|a918b33c-a015-448f-a53f-9501f8e0a697]    self._exec_step_function(step_func)
+[MFLOG|0|2025-01-03T18:17:32.976397Z|runtime|f071033d-a588-422b-b672-8f1341e959ca]  File "/tmp/tmp7vgx7oq7/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2025-01-03T18:17:32.976589Z|runtime|db9d705b-1e6e-45b6-9139-0437ef978e5c]    step_function()
+[MFLOG|0|2025-01-03T18:17:32.976778Z|runtime|34670308-d418-4d80-8be6-e72a09454c20]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/Kmeans.py", line 14, in start
+[MFLOG|0|2025-01-03T18:17:32.976958Z|runtime|889cb852-b83d-4d50-bf18-77eb04a2577e]    self.mtx, self.cols = preprocessing.scale_data(docs)
+[MFLOG|0|2025-01-03T18:17:32.977135Z|runtime|fbf69623-1f22-43ee-a46a-120ec1c7211b]                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:17:32.977386Z|runtime|b1649ab7-1b3c-4f4d-bb1d-863751661e31]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/preprocessing.py", line 47, in scale_data
+[MFLOG|0|2025-01-03T18:17:32.977732Z|runtime|3b3c2526-9df5-4d2e-abff-1c28c20ad33b]    mtx = vec.fit_transform(text_data)
+[MFLOG|0|2025-01-03T18:17:32.977978Z|runtime|fc5b4edb-b15d-4abe-9e6e-5db26d509e1b]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:17:32.978056Z|runtime|35b2a35b-6a50-411b-a259-e1cba2368595]  File "/home/fad/micromamba/envs/metaflow/linux-64/049dea74e0f9ab3/lib/python3.12/site-packages/sklearn/base.py", line 1473, in wrapper
+[MFLOG|0|2025-01-03T18:17:32.978202Z|runtime|fd0d527b-3d31-49d6-b68e-f553231ba264]    return fit_method(estimator, args, kwargs)
+[MFLOG|0|2025-01-03T18:17:32.978297Z|runtime|f91be573-c5fe-49a6-8e3d-ff88a403c465]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T18:17:32.978358Z|runtime|855256ad-34e5-4ab3-bb0e-afc8e5170655]  File "/home/fad/micromamba/envs/metaflow/linux-64/049dea74e0f9ab3/lib/python3.12/site-packages/sklearn/feature_extraction/text.py", line 1382, in fit_transform
+[MFLOG|0|2025-01-03T18:17:32.978445Z|runtime|e79db228-7d69-492a-89b1-4a32a5d3fa4a]    raise ValueError("max_df corresponds to < documents than min_df")
+[MFLOG|0|2025-01-03T18:17:32.978588Z|runtime|84c076e4-25c3-4c66-9469-a37fbbd1fd5f]ValueError: max_df corresponds to < documents than min_df
+[MFLOG|0|2025-01-03T18:17:32.978687Z|runtime|17f5b236-2dac-4eaa-96dc-039f6e5f081f]
+[MFLOG|0|2025-01-03T18:17:32.979706Z|runtime|cc46860c-ce1d-4fb6-bb86-622f854eee6f]Task failed.

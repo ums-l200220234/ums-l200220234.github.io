@@ -1,18 +1,18 @@
 from metaflow import FlowSpec, step, Parameter, resources, conda_base, profile
 from sklearn.cluster import KMeans
-from analyze_kmeans import top_words
+from analyze_kmeans import top_data_points
 
-@conda_base(python="3.12.7", libraries={"scikit-learn": "1.5.2"})
+@conda_base(python="3.12.7", libraries={"scikit-learn": "1.5.2", "pandas" : "2.2.2", "nltk":"3.9.1"})
 class KMeansFlow(FlowSpec):
-    num_docs = Parameter('num-docs', help='Number of documents', default=100)
+    num_docs = Parameter('num-docs', help='Number of documents', default=1000)
 
     @resources(memory=200)
     @step
     def start(self):
         import preprocessing
-        docs = preprocessing.load_chat()
-        self.mtx, self.cols = preprocessing.make_matrix(docs)
-        self.kmeans_params = [3, 4, 5]
+        docs = preprocessing.load_chat(self.num_docs)
+        self.mtx, self.cols = preprocessing.scale_data(docs)
+        self.kmeans_params = [2, 3, 4]
         self.next(self.train_kmeans, foreach='kmeans_params')
 
     @resources(cpu=1, memory=200)
@@ -28,7 +28,7 @@ class KMeansFlow(FlowSpec):
 
     @step
     def analyze(self):
-        self.top = top_words(self.k, self.clusters, self.mtx, self.cols)
+        self.top = top_data_points(self.k, self.clusters, self.mtx, self.cols)
         self.next(self.join)
 
     @step

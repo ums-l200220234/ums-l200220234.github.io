@@ -1,0 +1,5 @@
+[MFLOG|0|2025-01-03T17:56:27.936575Z|runtime|d9ca7712-9347-4da5-b36a-593b3eb4ab19]Dataset cleaned. Remaining records: 7780.
+[MFLOG|0|2025-01-03T17:56:27.939246Z|runtime|135616f3-32c5-4cb3-97b2-0d058145cc31]Dataset cleaned. Remaining records: 7780.
+[MFLOG|0|2025-01-03T17:56:31.523036Z|runtime|ea4acf3a-6236-455a-bbd8-cdb9aead952f]Preprocessing completed.
+[MFLOG|0|2025-01-03T17:56:31.525004Z|runtime|1634adf2-f9f4-43a3-8e1d-1ca92c91e82e]TF-IDF matrix shape: (4, 4)
+[MFLOG|0|2025-01-03T17:56:31.525382Z|runtime|48b9a897-daca-4aaf-aa4c-9ed908858415]Normalized matrix shape: (4, 4)

@@ -1,0 +1,46 @@
+[MFLOG|0|2025-01-03T17:14:56.172147Z|runtime|b752f318-a83d-4d55-b69e-a32298164d27][nltk_data] Downloading package punkt to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T17:14:56.246858Z|runtime|57ea0a23-b227-415c-9ab4-db93cf1cc7aa][nltk_data]   Package punkt is already up-to-date!
+[MFLOG|0|2025-01-03T17:14:56.260425Z|runtime|9c5c6d58-be6e-471c-be2d-3774be77023d][nltk_data] Downloading package punkt_tab to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T17:14:56.260780Z|runtime|7e891a01-9f00-4091-bc53-b386d876e5b1][nltk_data]   Package punkt_tab is already up-to-date!
+[MFLOG|0|2025-01-03T17:14:56.295704Z|runtime|776b8644-ed86-4143-a790-5319b5859cd3][nltk_data] Downloading package wordnet to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T17:14:56.296020Z|runtime|e6c42fd4-1f24-4d5c-8a92-fb21714c16e0][nltk_data]   Package wordnet is already up-to-date!
+[MFLOG|0|2025-01-03T17:14:56.397802Z|runtime|d1493b02-794f-4a9b-8954-e4e852a1e929][nltk_data] Downloading package omw-1.4 to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T17:14:56.398147Z|runtime|a01032a6-8b66-4dfa-9632-b3dbb6f6c05d][nltk_data]   Package omw-1.4 is already up-to-date!
+[MFLOG|0|2025-01-03T17:14:56.400951Z|runtime|5e88d467-0a50-4259-8aea-9eeeaafff404]<flow KMeansFlow step start> failed:
+[MFLOG|0|2025-01-03T17:14:56.412303Z|runtime|6d5e0838-a39a-4d9f-95f0-4f838325cf54]    Internal error
+[MFLOG|0|2025-01-03T17:14:56.423560Z|runtime|bed3e849-908e-43a8-a9c9-d94d3d9ad3ff]Traceback (most recent call last):
+[MFLOG|0|2025-01-03T17:14:56.428017Z|runtime|9712c0a1-ef66-4b3b-844a-8fa2507943be]  File "/tmp/tmpg5_6_mw0/metaflow/cli.py", line 1166, in main
+[MFLOG|0|2025-01-03T17:14:56.430193Z|runtime|3ad6aef0-0982-414f-8d44-0553b84f475d]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2025-01-03T17:14:56.436311Z|runtime|8c4fe129-bff9-431f-ac9b-69044c925c84]  File "/tmp/tmpg5_6_mw0/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2025-01-03T17:14:56.439418Z|runtime|18e6b71a-32e6-420e-9b12-5bd486ddea14]    return func(args, kwargs)
+[MFLOG|0|2025-01-03T17:14:56.996384Z|runtime|bedc9e99-2a72-48b2-b5bb-e451ea2370d7]           ^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:14:56.996859Z|runtime|556d155a-37f3-4a81-b7ec-72a6fb276501]  File "/tmp/tmpg5_6_mw0/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2025-01-03T17:14:56.997003Z|runtime|3d3d6882-8802-4a10-9184-576c490bd79c]    return self.main(args, kwargs)
+[MFLOG|0|2025-01-03T17:14:56.997148Z|runtime|a0ab8381-a05f-4f54-8414-811f650f8510]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:14:56.997242Z|runtime|9fc45770-c4be-47d9-a6fb-f944ec159385]  File "/tmp/tmpg5_6_mw0/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2025-01-03T17:14:56.997313Z|runtime|90fd3e95-5ad2-4da9-a00d-aea6de853532]    rv = self.invoke(ctx)
+[MFLOG|0|2025-01-03T17:14:56.997548Z|runtime|bb2690e0-c37a-455e-8c1a-2d4b026ab9ff]         ^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:14:56.997693Z|runtime|c1842789-b7f7-48a3-b276-2c859000f369]  File "/tmp/tmpg5_6_mw0/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2025-01-03T17:14:56.997791Z|runtime|8c008148-ce7a-45ae-be76-2ef29d9c47f8]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2025-01-03T17:14:56.997910Z|runtime|3515c534-3815-4981-9cb1-48b94a5c2eba]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:14:56.998034Z|runtime|78d3b988-f7d2-4e0b-9cab-b94962a47b55]  File "/tmp/tmpg5_6_mw0/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2025-01-03T17:14:56.998157Z|runtime|f8cc79b9-2c69-4ae8-95a1-657263eb1601]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2025-01-03T17:14:56.998291Z|runtime|39592bb2-1e0d-4dc9-b4db-c59623ac9441]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:14:56.998424Z|runtime|ab02c996-1e85-440e-8a0c-2f3996bc4c5e]  File "/tmp/tmpg5_6_mw0/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2025-01-03T17:14:56.998616Z|runtime|da341e50-240d-45f4-a5e8-937853ef3ca8]    return callback(args, kwargs)
+[MFLOG|0|2025-01-03T17:14:56.998809Z|runtime|0b31046b-6fad-4d3c-9a2a-0b0e38a027ef]           ^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:14:56.999024Z|runtime|75afb0d4-d6a7-418b-9bdf-6de5ca51461b]  File "/tmp/tmpg5_6_mw0/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2025-01-03T17:14:56.999232Z|runtime|f97a0004-d230-4849-b1ea-48976b1f0195]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2025-01-03T17:14:56.999406Z|runtime|72bbe0a4-fc10-49ed-b39c-1ac34d5ccc6c]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:14:56.999621Z|runtime|800763e0-65b8-43e3-ac4d-a31fbe001946]  File "/tmp/tmpg5_6_mw0/metaflow/cli.py", line 469, in step
+[MFLOG|0|2025-01-03T17:14:56.999792Z|runtime|227bb343-60a7-4888-848d-aa42c64ddf97]    task.run_step(
+[MFLOG|0|2025-01-03T17:14:56.999980Z|runtime|a837841c-702f-46c9-89dc-6d9e2eda0259]  File "/tmp/tmpg5_6_mw0/metaflow/task.py", line 653, in run_step
+[MFLOG|0|2025-01-03T17:14:57.000165Z|runtime|d41dc1c5-8009-4136-9b85-fe17da853b07]    self._exec_step_function(step_func)
+[MFLOG|0|2025-01-03T17:14:57.000370Z|runtime|0f5c3964-9630-4e98-abb0-45202271dac2]  File "/tmp/tmpg5_6_mw0/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2025-01-03T17:14:57.000620Z|runtime|0f01bffd-d0f1-43a8-af94-1f55daf469e2]    step_function()
+[MFLOG|0|2025-01-03T17:14:57.000809Z|runtime|761bd228-9866-442f-931e-317679e83505]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/Kmeans.py", line 13, in start
+[MFLOG|0|2025-01-03T17:14:57.000985Z|runtime|06f94a8b-17fb-4ab9-b843-bc7be6f15673]    docs = preprocessing.load_chat()
+[MFLOG|0|2025-01-03T17:14:57.001161Z|runtime|5d7484cf-4736-4d24-94d7-1ff8002ea4a5]           ^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:14:57.001377Z|runtime|fb2d4502-50dc-4336-9595-dbc307638f75]AttributeError: module 'preprocessing' has no attribute 'load_chat'
+[MFLOG|0|2025-01-03T17:14:57.001578Z|runtime|c6a0887d-6f71-4960-a96f-4208c094ccec]
+[MFLOG|0|2025-01-03T17:14:57.002308Z|runtime|f0504587-1033-4d64-adfa-e05e7aaa27ab]Task failed.

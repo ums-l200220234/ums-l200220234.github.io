@@ -1,0 +1,1 @@
+{"run_number": "1735926611907674", "step_name": "start", "task_id": "1", "flow_id": "KMeansFlow", "user_name": "fad", "tags": [], "system_tags": ["user:fad", "python_version:3.12.7", "metaflow_version:2.12.30", "runtime:dev"], "ts_epoch": 1735926611924}

@@ -1,0 +1,46 @@
+[MFLOG|0|2025-01-03T17:13:24.277386Z|runtime|7d1747ba-9a3e-47c5-b7c2-e34369609797][nltk_data] Downloading package punkt to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T17:13:27.760206Z|runtime|1d2229dc-7f60-42dd-a283-0ebf3a6e4da5][nltk_data]   Unzipping tokenizers/punkt.zip.
+[MFLOG|0|2025-01-03T17:13:28.234143Z|runtime|f75b63a6-a0ca-485a-81d9-e5d04f8ef056][nltk_data] Downloading package punkt_tab to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T17:13:29.697055Z|runtime|cb25d950-7655-48a6-8e38-8ac3516aa5b6][nltk_data]   Unzipping tokenizers/punkt_tab.zip.
+[MFLOG|0|2025-01-03T17:13:29.892791Z|runtime|667319d6-def7-447c-9fba-1ea665f78388][nltk_data] Downloading package wordnet to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T17:13:33.969525Z|runtime|19bc04b1-6559-4f9f-a5a8-e638c1e12e51][nltk_data] Downloading package omw-1.4 to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T17:13:45.126348Z|runtime|4c0832be-fae3-44e4-9d62-2dbc7d068c0e]<flow KMeansFlow step start> failed:
+[MFLOG|0|2025-01-03T17:13:45.157895Z|runtime|eeb095c7-af2c-44ef-936a-e830ab19e543]    Internal error
+[MFLOG|0|2025-01-03T17:13:45.170124Z|runtime|6459ad37-839e-48f8-9e04-200b6cb0a16d]Traceback (most recent call last):
+[MFLOG|0|2025-01-03T17:13:45.740743Z|runtime|0c228003-b045-4db7-a329-9afbe3cf772b]  File "/tmp/tmp36avnwte/metaflow/cli.py", line 1166, in main
+[MFLOG|0|2025-01-03T17:13:45.741671Z|runtime|c36faaa3-2bd2-443f-9c5a-4e887a0cb607]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2025-01-03T17:13:45.742009Z|runtime|521f4c13-5c03-421a-bf72-92997cab8800]  File "/tmp/tmp36avnwte/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2025-01-03T17:13:45.742255Z|runtime|ebabc5f9-2111-4a0d-a228-722520c960d9]    return func(args, kwargs)
+[MFLOG|0|2025-01-03T17:13:45.742521Z|runtime|9fa76ddf-7086-4c98-812b-3e6030ecb9d7]           ^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:13:45.742823Z|runtime|7881bf1e-19da-4cde-ac59-37e4c36c2af1]  File "/tmp/tmp36avnwte/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2025-01-03T17:13:45.743094Z|runtime|1f678586-a192-4a31-9a5a-d728ad97f7f9]    return self.main(args, kwargs)
+[MFLOG|0|2025-01-03T17:13:45.743240Z|runtime|70683eab-87ca-44c3-891a-414b3a0ad03d]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:13:45.743354Z|runtime|752bb17f-5337-4f3d-aaaa-4e0e0a96cece]  File "/tmp/tmp36avnwte/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2025-01-03T17:13:45.743783Z|runtime|9cba81df-a146-4492-875b-5cbb2f97cf6c]    rv = self.invoke(ctx)
+[MFLOG|0|2025-01-03T17:13:45.743978Z|runtime|eab68a0c-a50c-46c8-80e8-eefba178b102]         ^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:13:45.744236Z|runtime|8bb0943a-974d-4b71-958b-4584b5bee9b2]  File "/tmp/tmp36avnwte/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2025-01-03T17:13:45.744426Z|runtime|6a483a2e-d54e-4984-8f99-87b5b8796bb3]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2025-01-03T17:13:45.744530Z|runtime|ad9f3041-e743-451b-b62c-d91ad26babce]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:13:45.744640Z|runtime|8dd4410f-79a7-44f6-8396-fe8fce9cbcf6]  File "/tmp/tmp36avnwte/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2025-01-03T17:13:45.744748Z|runtime|5ba3e134-76e5-477b-8b30-dbcbe9329dd5]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2025-01-03T17:13:45.744842Z|runtime|c7abfe9f-5c0b-4c4f-8f09-14f885492204]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:13:45.744918Z|runtime|e4da0ba4-96ad-4408-a155-59f99d88f08c]  File "/tmp/tmp36avnwte/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2025-01-03T17:13:45.745032Z|runtime|c4e43d7e-8ff1-45ff-9a32-7fc8e6fdf47c]    return callback(args, kwargs)
+[MFLOG|0|2025-01-03T17:13:45.745107Z|runtime|659c1589-05aa-430a-bc99-dd11d880b284]           ^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:13:45.745153Z|runtime|103144c4-407f-479f-a880-37ffac21e52b]  File "/tmp/tmp36avnwte/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2025-01-03T17:13:45.745221Z|runtime|059ce2b9-0d01-4d91-ba19-10e9332c5165]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2025-01-03T17:13:45.745311Z|runtime|cc42b9dd-d5a0-4d00-b6ab-92c825f37af0]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:13:45.745434Z|runtime|aa8cd0bf-c354-4481-972c-f65f0664d642]  File "/tmp/tmp36avnwte/metaflow/cli.py", line 469, in step
+[MFLOG|0|2025-01-03T17:13:45.745620Z|runtime|778fbdd1-2a70-4c84-bb69-4bd188d421fc]    task.run_step(
+[MFLOG|0|2025-01-03T17:13:45.745750Z|runtime|387192d3-f7d3-46be-907b-8e9ff26995a8]  File "/tmp/tmp36avnwte/metaflow/task.py", line 653, in run_step
+[MFLOG|0|2025-01-03T17:13:45.745839Z|runtime|1cf622f9-5161-4319-9840-7a69f6277b6c]    self._exec_step_function(step_func)
+[MFLOG|0|2025-01-03T17:13:45.745918Z|runtime|05135e3f-a50c-48c4-9e59-fde297de18fe]  File "/tmp/tmp36avnwte/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2025-01-03T17:13:45.745974Z|runtime|5518a499-3c58-4777-9afe-b7290db83f28]    step_function()
+[MFLOG|0|2025-01-03T17:13:45.746049Z|runtime|d32ede72-60a2-43fc-9562-14b9da72305d]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/Kmeans.py", line 12, in start
+[MFLOG|0|2025-01-03T17:13:45.746097Z|runtime|cc59eddb-ea23-43d7-8161-932ce0762e24]    import preprocessing
+[MFLOG|0|2025-01-03T17:13:45.746171Z|runtime|61b6abf5-cba3-4025-b5f9-cabc157682e1]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/preprocessing.py", line 19, in <module>
+[MFLOG|0|2025-01-03T17:13:45.746252Z|runtime|94343cd4-8f7c-456e-88c1-1488343d0ec6]    factory = StemmerFactory()
+[MFLOG|0|2025-01-03T17:13:45.746301Z|runtime|95661d9f-f2f3-46f2-aba7-476efcf27e1d]              ^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:13:45.746346Z|runtime|dacb8a57-5461-4cfc-a33b-2c0d04245aa4]NameError: name 'StemmerFactory' is not defined
+[MFLOG|0|2025-01-03T17:13:45.746456Z|runtime|efab693c-7255-4d7b-ab8d-cdddf94c6fa5]
+[MFLOG|0|2025-01-03T17:13:45.746831Z|runtime|7d910812-02ba-4ca0-bbf1-e2faca10a342]Task failed.

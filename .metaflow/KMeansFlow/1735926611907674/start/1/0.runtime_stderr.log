@@ -1,0 +1,49 @@
+[MFLOG|0|2025-01-03T17:50:14.448979Z|runtime|66fcef00-38b6-4477-ac58-5aea1bd4f238][nltk_data] Downloading package punkt to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T17:50:14.489147Z|runtime|49d68c4c-7344-4f4b-8e57-2b6c361b5699][nltk_data]   Package punkt is already up-to-date!
+[MFLOG|0|2025-01-03T17:50:14.505647Z|runtime|de57a9b0-60c6-4971-92f8-8b514f30fb4c][nltk_data] Downloading package punkt_tab to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T17:50:14.505995Z|runtime|801572f2-81c8-4e26-96fe-f997957a319d][nltk_data]   Package punkt_tab is already up-to-date!
+[MFLOG|0|2025-01-03T17:50:14.554366Z|runtime|658748fb-1de7-4304-a85d-9020563d05e6][nltk_data] Downloading package wordnet to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T17:50:14.555079Z|runtime|640649bc-8b76-4581-a51f-155a0ca7a857][nltk_data]   Package wordnet is already up-to-date!
+[MFLOG|0|2025-01-03T17:50:14.654211Z|runtime|cd9689e1-172f-4273-9021-a739fcaea196][nltk_data] Downloading package omw-1.4 to /home/fad/nltk_data...
+[MFLOG|0|2025-01-03T17:50:14.654810Z|runtime|2f4d75f5-3f85-4bba-993e-74f4681db6f7][nltk_data]   Package omw-1.4 is already up-to-date!
+[MFLOG|0|2025-01-03T17:50:14.758801Z|runtime|d851a585-f63f-489c-af54-ffbb172a50d7]<flow KMeansFlow step start> failed:
+[MFLOG|0|2025-01-03T17:50:14.772872Z|runtime|2a71a35c-4dcd-49be-b5fa-d0543456d802]    Internal error
+[MFLOG|0|2025-01-03T17:50:14.776348Z|runtime|004bc062-d154-459f-a322-3e863a7a470f]Traceback (most recent call last):
+[MFLOG|0|2025-01-03T17:50:14.776745Z|runtime|725ab4ff-86f8-4c13-aaf5-daa00ee776df]  File "/tmp/tmpx4z23vze/metaflow/cli.py", line 1166, in main
+[MFLOG|0|2025-01-03T17:50:14.776875Z|runtime|1f715169-98a4-4645-ae44-1f95b238b40b]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2025-01-03T17:50:14.776959Z|runtime|71f12169-96d7-430e-af86-9cf26164333c]  File "/tmp/tmpx4z23vze/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2025-01-03T17:50:14.777030Z|runtime|0d1cc979-8593-40e7-a06f-e3d0109ad57b]    return func(args, kwargs)
+[MFLOG|0|2025-01-03T17:50:14.777099Z|runtime|fb3a816d-9a14-4adc-a41b-cbadee2a6ee7]           ^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:14.777189Z|runtime|b40c612d-92b0-4111-89c2-33104f06bd59]  File "/tmp/tmpx4z23vze/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2025-01-03T17:50:14.777262Z|runtime|cc267335-b99e-4f26-b8dd-c2404a95c930]    return self.main(args, kwargs)
+[MFLOG|0|2025-01-03T17:50:15.255620Z|runtime|94f4d631-2bb3-46ba-9e2b-7ed4d4c685cd]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:15.256060Z|runtime|e79bb1f7-ac93-4ed1-98f3-9189ff806904]  File "/tmp/tmpx4z23vze/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2025-01-03T17:50:15.256228Z|runtime|42ad3627-11aa-4c89-8e0d-54a9364b0bc1]    rv = self.invoke(ctx)
+[MFLOG|0|2025-01-03T17:50:15.256420Z|runtime|c17973bc-9a54-401c-9404-7ebd09dc1781]         ^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:15.256550Z|runtime|e7fd7bed-1fb9-41e1-8384-701d619627f0]  File "/tmp/tmpx4z23vze/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2025-01-03T17:50:15.256674Z|runtime|6b935ce8-a248-4464-b4e1-358a5a6314ab]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2025-01-03T17:50:15.256755Z|runtime|bd6c2489-344b-4ab2-ab97-861c43054ca0]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:15.256858Z|runtime|3681906f-8239-4967-96b1-673f14690329]  File "/tmp/tmpx4z23vze/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2025-01-03T17:50:15.256999Z|runtime|3d4b584c-bc30-41fd-b635-c105b21c226d]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2025-01-03T17:50:15.257185Z|runtime|3903cb97-8743-4d8f-aa9f-c6793fb9c853]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:15.257396Z|runtime|15488c6d-48f3-4d1d-85f7-774d97ef68b8]  File "/tmp/tmpx4z23vze/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2025-01-03T17:50:15.257583Z|runtime|394e9304-8563-4859-8421-b7adf6e1a24f]    return callback(args, kwargs)
+[MFLOG|0|2025-01-03T17:50:15.257700Z|runtime|8721c13b-7e90-4333-902d-1061c391e65b]           ^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:15.257890Z|runtime|217fa7d7-d165-459e-98ed-fc62f499c71a]  File "/tmp/tmpx4z23vze/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2025-01-03T17:50:15.258067Z|runtime|c0982e41-ae7e-4f1e-97ac-f7e269d4290e]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2025-01-03T17:50:15.258271Z|runtime|a74a1a64-68be-4df4-b533-041afd784c0e]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:15.258412Z|runtime|9eee5532-8133-411d-a81d-3f97d5e1af68]  File "/tmp/tmpx4z23vze/metaflow/cli.py", line 469, in step
+[MFLOG|0|2025-01-03T17:50:15.258583Z|runtime|e9728b41-7405-41e3-9adb-0e64b9b28e44]    task.run_step(
+[MFLOG|0|2025-01-03T17:50:15.258796Z|runtime|f1186ad3-b330-4586-84f1-61f573d470fa]  File "/tmp/tmpx4z23vze/metaflow/task.py", line 653, in run_step
+[MFLOG|0|2025-01-03T17:50:15.259002Z|runtime|a297f673-4122-4852-a3dc-09baae7e5130]    self._exec_step_function(step_func)
+[MFLOG|0|2025-01-03T17:50:15.259209Z|runtime|e11b71af-d8f6-4f80-b03b-c6482ef409e9]  File "/tmp/tmpx4z23vze/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2025-01-03T17:50:15.259374Z|runtime|11ed9f5a-6e34-4250-b7d7-b499aa7f8897]    step_function()
+[MFLOG|0|2025-01-03T17:50:15.259577Z|runtime|a33f80d5-608d-43ea-9b22-7270e51a1f7b]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/Kmeans.py", line 13, in start
+[MFLOG|0|2025-01-03T17:50:15.259737Z|runtime|0d65f891-03c7-4f13-92fb-08a3285a7b9e]    docs = preprocessing.load_chat(self.num_docs)
+[MFLOG|0|2025-01-03T17:50:15.259916Z|runtime|5d300367-0263-4dc3-ae78-8659ccd35819]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:15.260146Z|runtime|0303bb63-7df1-4c7a-a8e8-277962b3d706]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/preprocessing.py", line 63, in load_chat
+[MFLOG|0|2025-01-03T17:50:15.260332Z|runtime|10b5dbf9-5fa3-44e4-b4f6-8eca3e39dbc6]    df = pd.read_csv(extracted_file)
+[MFLOG|0|2025-01-03T17:50:15.260487Z|runtime|595237b8-f632-4cbe-b260-16acb5e48a91]                     ^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-03T17:50:15.260644Z|runtime|b434db1d-37d1-43e0-9759-eb9b70adb93a]NameError: name 'extracted_file' is not defined
+[MFLOG|0|2025-01-03T17:50:15.260804Z|runtime|3eafa306-737c-4165-a31e-37826ad60556]
+[MFLOG|0|2025-01-03T17:50:15.261377Z|runtime|a970b878-7bf5-46ca-bbc0-3fad04ff91d5]Task failed.

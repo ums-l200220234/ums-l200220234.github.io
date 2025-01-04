@@ -1,8 +1,6 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import  Normalizer
-from sklearn.feature_extraction.text import CountVectorizer
-# from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from nltk.tokenize import word_tokenize
 from nltk.corpus import wordnet
 from nltk.stem import WordNetLemmatizer
@@ -17,8 +15,7 @@ nltk.download('omw-1.4')
 
 
         
-# factory = StemmerFactory()
-# stemmer = factory.create_stemmer()
+
 lemmatizer = WordNetLemmatizer()
 
 

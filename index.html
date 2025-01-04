@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan KMeans Clustering</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Laporan Implementasi KMeans Clustering</h1>
+
+    <h2>1. Pengantar</h2>
+    <p>Kode ini dirancang untuk melakukan clustering data teks menggunakan algoritma <strong>KMeans</strong> yang diimplementasikan dengan bantuan library Scikit-learn dan Metaflow. Proses dimulai dengan memuat data dari file terkompresi, membersihkan data, dan memprosesnya sebelum diterapkan algoritma clustering.</p>
+
+    <h2>2. Modul Preprocessing</h2>
+    <p>Modul ini menangani langkah-langkah berikut:</p>
+    <h3>a. Membersihkan Data</h3>
+    <p>Data yang kosong atau hanya berisi spasi dihapus:</p>
+    <pre><code>df = df.dropna(subset=['Konten'])
+df = df[df['Konten'].str.strip() != ""]</code></pre>
+
+    <h3>b. Preprocessing Teks</h3>
+    <p>Teks diubah menjadi huruf kecil, menghapus tanda baca, dan melakukan proses lemmatization:</p>
+    <pre><code>text = text.lower()
+text = text.translate(str.maketrans('', '', string.punctuation))
+lemmatized_words = [lemmatizer.lemmatize(word, pos=wordnet.VERB) for word in words]</code></pre>
+
+    <h3>c. Mengukur Kemunculan Kata</h3>
+    <p>Menggunakan <code>TfidfVectorizer</code> untuk menghitung frekuensi kata:</p>
+    <pre><code>vectorizer = TfidfVectorizer(max_features=1000, stop_words='english')</code></pre>
+
+    <h2>3. Memuat Data dari Arsip .tar</h2>
+    <p>Data diambil dari file terkompresi (tar) menggunakan modul <code>tarfile</code>:</p>
+    <pre><code>with tarfile.open(tar_path, "r:*") as tar:
+    member = tar.getmember(file_name)
+    with tar.extractfile(member) as f:
+        df = pd.read_csv(f)</code></pre>
+
+    <h2>4. Implementasi KMeans dengan Metaflow</h2>
+    <p>Pipeline Metaflow diimplementasikan sebagai berikut:</p>
+
+    <h3>a. Parameter dan Start</h3>
+    <p>Parameter seperti jumlah dokumen dan jumlah cluster diinisialisasi:</p>
+    <pre><code>num_docs = Parameter('num-docs', default=1000)</code></pre>
+
+    <h3>b. Training Model KMeans</h3>
+    <p>Algoritma KMeans diterapkan dengan 3 kemungkinan jumlah cluster:</p>
+    <pre><code>model = KMeans(n_clusters=self.k, random_state=42, n_init=10)</code></pre>
+
+    <h3>c. Analisis dan Pengelompokan</h3>
+    <p>Data diurutkan berdasarkan frekuensi kata tertinggi di setiap cluster:</p>
+    <pre><code>ordered_freqs = np.argsort(word_freqs)</code></pre>
+
+    <h2>5. Hasil dan Validasi</h2>
+    <p>Hasil clustering dapat diperiksa dengan kode berikut:</p>
+    <pre><code>k = run.data.top[4][:3]
+l = run.data.top[5][:3]
+m = run.data.top[6][:3]</code></pre>
+    <p>Menampilkan 3 kata teratas dari masing-masing cluster:</p>
+    <pre><code>print(f"Kluster 4: {k}")
+print(f"Kluster 5: {l}")
+print(f"Kluster 6: {m}")</code></pre>
+
+    <h2>6. Kesimpulan</h2>
+    <p>Kode ini secara efektif memproses data teks, menerapkan algoritma KMeans clustering, dan menganalisis hasilnya. Proses ini dirancang agar dapat menangani file terkompresi dengan format .tar, membersihkan data, dan menerapkan preprocessing yang diperlukan.</p>
+
+    <h2>7. Rekomendasi</h2>
+    <ul>
+        <li>Periksa ukuran dataset yang digunakan untuk memastikan kecukupan data dalam setiap cluster.</li>
+        <li>Pertimbangkan untuk menambahkan visualisasi hasil clustering menggunakan PCA atau t-SNE.</li>
+        <li>Eksplorasi berbagai parameter KMeans seperti <code>n_init</code> dan <code>max_iter</code> untuk optimasi hasil.</li>
+    </ul>
+
+</body>
+</html>

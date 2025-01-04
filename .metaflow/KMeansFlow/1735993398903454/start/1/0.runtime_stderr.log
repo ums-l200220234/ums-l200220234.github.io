@@ -1,0 +1,8 @@
+[MFLOG|0|2025-01-04T12:23:21.133788Z|runtime|15460092-d8d1-490b-ae6b-519c1e7286eb]Traceback (most recent call last):
+[MFLOG|0|2025-01-04T12:23:21.134144Z|runtime|5642d586-22db-4556-ab2f-3bc578c746b9]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/Kmeans.py", line 3, in <module>
+[MFLOG|0|2025-01-04T12:23:21.134290Z|runtime|d99e14d7-6c57-4ab7-b6cb-6fea743acfd6]    from analyze_kmeans import top_data_points
+[MFLOG|0|2025-01-04T12:23:21.134400Z|runtime|431f3619-2afc-433a-a25d-0ccef6710946]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/analyze_kmeans.py", line 19, in <module>
+[MFLOG|0|2025-01-04T12:23:21.416364Z|runtime|7c649603-9fb2-45ef-893d-938eea28dc5d]    k = run.data.top[3]
+[MFLOG|0|2025-01-04T12:23:21.416661Z|runtime|6c58dbbb-6c24-42b4-b86e-e443cdda9373]        ^^^^^^^^^^^^
+[MFLOG|0|2025-01-04T12:23:21.416740Z|runtime|afb9a894-993e-4bcc-be91-3486ca5e9f99]AttributeError: 'NoneType' object has no attribute 'top'
+[MFLOG|0|2025-01-04T12:23:21.417164Z|runtime|2998c49f-a0e7-41f4-90f9-f1e08bba78fe]Task failed.

@@ -38,28 +38,46 @@ def preprocess_text(text):
 
 def preprocess_dataset(df):
     df = clean_data(df)
-    df['Processed_Konten'] = df['Konten'].apply(preprocess_text)
+    df['Konten'] = df['Konten'].apply(preprocess_text)
     print("Preprocessing completed.")
     return df
 
 def scale_data(text_data, binary=False):
-    vec = CountVectorizer(min_df=1, max_df=1,binary=binary)
-    mtx = vec.fit_transform(text_data)
-    cols = [None] * len(vec.vocabulary_)
-    for word, idx in vec.vocabulary_.items():
-        cols[idx] = word
+    processed = text_data['Konten']
+    vectorizer = TfidfVectorizer(max_features=1000, stop_words='english')
+    tfidf_matrix = vectorizer.fit_transform(processed)
+    print(f"TF-IDF matrix shape: {tfidf_matrix.shape}")
+
+    normalizer = Normalizer()
+    mtx = normalizer.fit_transform(tfidf_matrix)
+    print(f"Normalized matrix shape: {mtx.shape}")
+
+    cols = vectorizer.get_feature_names_out()
     return mtx, cols
 
 def load_chat(nums_docs):
-    file_path = "../UAS/chat_cleaned.csv"
+    tar_path =  "../UAS/chat_cleaned.tar"
+    file_name = "chat_cleaned.csv"
     try:
-        df = pd.read_csv(file_path)
-    except:
-        print("file not found error")
+        with tarfile.open(tar_path, "r:*") as tar: 
+            member = tar.getmember(file_name)
+            with tar.extractfile(member) as f:
+                df = pd.read_csv(f) 
+                df = clean_data(df)
+                df = preprocess_dataset(df)
+        print(f"File '{file_name}' successfully loaded from '{tar_path}'.")
+        return df
 
-    df = clean_data(df)
-    df = preprocess_dataset(df)
+    except FileNotFoundError:
+        print(f"File '{tar_path}' not found.")
+    except KeyError:
+        print(f"'{file_name}' not found in the archive.")
+    except Exception as e:
+        print(f"Error occurred: {e}")
+
+
     return df
+
 
         
 

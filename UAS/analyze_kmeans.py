@@ -13,9 +13,3 @@ def top_data_points(num_clusters, clusters, mtx, columns):
         top.append(top_words)
     return top
 
-from metaflow import Flow
-run = Flow('KMeansFlow').latest_run
-
-k = run.data.top[4]
-
-print(k)

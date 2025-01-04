@@ -1,0 +1,49 @@
+[MFLOG|0|2025-01-04T06:57:24.880093Z|runtime|16ff2d46-afbe-4896-8e0e-3a2b01b1d5a9][nltk_data] Downloading package punkt to /home/fad/nltk_data...
+[MFLOG|0|2025-01-04T06:57:24.936705Z|runtime|3a2d7b76-2642-465d-a29e-21909e4fd6eb][nltk_data]   Package punkt is already up-to-date!
+[MFLOG|0|2025-01-04T06:57:24.937156Z|runtime|4b2ebff9-346f-4921-bc39-94c6be82ae04][nltk_data] Downloading package punkt_tab to /home/fad/nltk_data...
+[MFLOG|0|2025-01-04T06:57:24.955043Z|runtime|4183df70-2c5e-4d1b-81de-17a28fa93376][nltk_data]   Package punkt_tab is already up-to-date!
+[MFLOG|0|2025-01-04T06:57:24.955450Z|runtime|6f56cbd0-2e2a-4152-8627-b195ce377afb][nltk_data] Downloading package wordnet to /home/fad/nltk_data...
+[MFLOG|0|2025-01-04T06:57:24.983134Z|runtime|d1a15139-7aff-4fb9-b472-9689a7ac0a7c][nltk_data]   Package wordnet is already up-to-date!
+[MFLOG|0|2025-01-04T06:57:25.042658Z|runtime|0e9727a7-a63d-4ccf-b83a-ac360cd2f6a8][nltk_data] Downloading package omw-1.4 to /home/fad/nltk_data...
+[MFLOG|0|2025-01-04T06:57:25.043031Z|runtime|1762e9b1-91cb-4a42-bd73-72626f49f1a7][nltk_data]   Package omw-1.4 is already up-to-date!
+[MFLOG|0|2025-01-04T06:57:25.048167Z|runtime|b399b8bc-5ff5-489a-bf3e-b2e9a8e388e6]<flow KMeansFlow step start> failed:
+[MFLOG|0|2025-01-04T06:57:25.053838Z|runtime|f246fd1b-fc12-4d30-8ced-5ce920098be6]    Internal error
+[MFLOG|0|2025-01-04T06:57:25.058373Z|runtime|72192657-f22b-4c5c-812f-c6f89846605f]Traceback (most recent call last):
+[MFLOG|0|2025-01-04T06:57:25.511615Z|runtime|0d7570d9-e15d-4f88-9977-fe6cb005cce6]  File "/tmp/tmp4fnp7285/metaflow/cli.py", line 1166, in main
+[MFLOG|0|2025-01-04T06:57:25.512146Z|runtime|fdc57ec1-9e41-4a63-9d80-b7e14f07514c]    start(auto_envvar_prefix="METAFLOW", obj=state)
+[MFLOG|0|2025-01-04T06:57:25.512411Z|runtime|530f2fa9-3a3d-4697-92c4-34a472115aec]  File "/tmp/tmp4fnp7285/metaflow/tracing/__init__.py", line 27, in wrapper_func
+[MFLOG|0|2025-01-04T06:57:25.512617Z|runtime|411077ca-801f-44d2-9b37-25755d443e0c]    return func(args, kwargs)
+[MFLOG|0|2025-01-04T06:57:25.512806Z|runtime|acb21538-b958-4ebc-bd76-a548e584cf18]           ^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-04T06:57:25.512988Z|runtime|27652a77-82c8-4efa-85bc-611d3eaebcd8]  File "/tmp/tmp4fnp7285/metaflow/_vendor/click/core.py", line 829, in __call__
+[MFLOG|0|2025-01-04T06:57:25.513184Z|runtime|50995160-54b3-479e-a130-c57c4b9e5f6f]    return self.main(args, kwargs)
+[MFLOG|0|2025-01-04T06:57:25.513367Z|runtime|0d081198-2afa-4462-813a-81892c2318d3]           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-04T06:57:25.513556Z|runtime|ffb6faf2-6b7d-40f8-8e19-90b98da7ab50]  File "/tmp/tmp4fnp7285/metaflow/_vendor/click/core.py", line 782, in main
+[MFLOG|0|2025-01-04T06:57:25.513754Z|runtime|116a9ed6-7c3e-4f9f-9566-8169e4ac1471]    rv = self.invoke(ctx)
+[MFLOG|0|2025-01-04T06:57:25.513903Z|runtime|2e622b05-8252-43f6-967b-d6714b5eb43b]         ^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-04T06:57:25.514079Z|runtime|7e156834-3bea-416a-b41e-746dd8a7d5e8]  File "/tmp/tmp4fnp7285/metaflow/_vendor/click/core.py", line 1259, in invoke
+[MFLOG|0|2025-01-04T06:57:25.514271Z|runtime|1e2b8a57-c2d7-4d56-ad3d-89fe85587284]    return _process_result(sub_ctx.command.invoke(sub_ctx))
+[MFLOG|0|2025-01-04T06:57:25.514478Z|runtime|d6c6529a-4bdf-48fd-97bc-220acef7d17f]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-04T06:57:25.514706Z|runtime|3e407c5a-d8d5-4eb2-949f-62ae880d3c73]  File "/tmp/tmp4fnp7285/metaflow/_vendor/click/core.py", line 1066, in invoke
+[MFLOG|0|2025-01-04T06:57:25.514892Z|runtime|b28681a1-3c43-46b6-80c9-e776731401f9]    return ctx.invoke(self.callback, ctx.params)
+[MFLOG|0|2025-01-04T06:57:25.515074Z|runtime|157fe1d9-31ca-4b65-8f93-275abb3698ad]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-04T06:57:25.515270Z|runtime|833179b0-b82b-49cf-83de-64576ae7154e]  File "/tmp/tmp4fnp7285/metaflow/_vendor/click/core.py", line 610, in invoke
+[MFLOG|0|2025-01-04T06:57:25.515459Z|runtime|804c4d54-d5be-4a45-ab0b-cdba14e5846b]    return callback(args, kwargs)
+[MFLOG|0|2025-01-04T06:57:25.515641Z|runtime|ad3b4c30-79bc-4fd7-9d43-9618070bad08]           ^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-04T06:57:25.515814Z|runtime|60f1d8ec-e0cc-4f86-8279-47c8a390d9a2]  File "/tmp/tmp4fnp7285/metaflow/_vendor/click/decorators.py", line 21, in new_func
+[MFLOG|0|2025-01-04T06:57:25.515995Z|runtime|04518eaf-4576-4904-a229-804e6f4616c2]    return f(get_current_context(), args, kwargs)
+[MFLOG|0|2025-01-04T06:57:25.516176Z|runtime|6d0d48a2-9e8a-44b8-bc5f-a42763c9d920]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-04T06:57:25.516360Z|runtime|25f6e4ed-ae25-4d96-95a2-366fd0d3d5fa]  File "/tmp/tmp4fnp7285/metaflow/cli.py", line 469, in step
+[MFLOG|0|2025-01-04T06:57:25.516543Z|runtime|b33bb58d-389a-4de7-8da4-e71f560add79]    task.run_step(
+[MFLOG|0|2025-01-04T06:57:25.516719Z|runtime|92478c8d-c534-4b14-aaea-7ad208ed867a]  File "/tmp/tmp4fnp7285/metaflow/task.py", line 653, in run_step
+[MFLOG|0|2025-01-04T06:57:25.516881Z|runtime|46a8f296-6161-40c7-9b1a-073fb8a5f9c8]    self._exec_step_function(step_func)
+[MFLOG|0|2025-01-04T06:57:25.516997Z|runtime|5eb0b080-4b70-4b68-8840-1bfab0b2a52a]  File "/tmp/tmp4fnp7285/metaflow/task.py", line 62, in _exec_step_function
+[MFLOG|0|2025-01-04T06:57:25.517188Z|runtime|db7ca0e7-bf7c-4587-b918-7813207bdd91]    step_function()
+[MFLOG|0|2025-01-04T06:57:25.517584Z|runtime|606fb055-c326-4b9a-addb-4da631ad6ec0]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/Kmeans.py", line 13, in start
+[MFLOG|0|2025-01-04T06:57:25.517933Z|runtime|e14f07ec-6c80-4009-ae98-78e759f276c3]    docs = preprocessing.load_chat(self.num_docs)
+[MFLOG|0|2025-01-04T06:57:25.518224Z|runtime|6a446776-3ef9-4661-a151-124a245cb925]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[MFLOG|0|2025-01-04T06:57:25.518468Z|runtime|b0eb3460-7204-457c-939d-907e18ff70fe]  File "/home/fad/gitclonefolder/ums-L200220234.github.io/UAS/preprocessing.py", line 62, in load_chat
+[MFLOG|0|2025-01-04T06:57:25.519056Z|runtime|9fe392f6-e1e1-4950-9408-cac6a574e359]    df = clean_data(df)
+[MFLOG|0|2025-01-04T06:57:25.520131Z|runtime|3c3f3011-c975-4700-aff4-fc2b49ff4e1d]                    ^^
+[MFLOG|0|2025-01-04T06:57:25.520738Z|runtime|e0b7127e-7c06-4864-a6b4-129e3b172687]UnboundLocalError: cannot access local variable 'df' where it is not associated with a value
+[MFLOG|0|2025-01-04T06:57:25.520833Z|runtime|f06c4c15-f503-4700-a2be-85fbb8568ac9]
+[MFLOG|0|2025-01-04T06:57:25.522131Z|runtime|42d409a7-3234-4436-890b-6a3dde07947c]Task failed.

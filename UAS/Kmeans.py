@@ -12,7 +12,7 @@ class KMeansFlow(FlowSpec):
         import preprocessing
         docs = preprocessing.load_chat(self.num_docs)
         self.mtx, self.cols = preprocessing.scale_data(docs)
-        self.kmeans_params = [2, 3, 4]
+        self.kmeans_params = [4, 5, 6]
         self.next(self.train_kmeans, foreach='kmeans_params')
 
     @resources(cpu=1, memory=200)

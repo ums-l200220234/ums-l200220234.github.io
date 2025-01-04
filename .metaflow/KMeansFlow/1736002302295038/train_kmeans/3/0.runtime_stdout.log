@@ -1,0 +1,2 @@
+[MFLOG|0|2025-01-04T14:51:49.236762Z|runtime|7cd64101-f661-48a3-9ad6-43e1e0cf2d38]PROFILE: kmeans starting
+[MFLOG|0|2025-01-04T14:51:55.644323Z|runtime|0cc2906d-f2f2-4285-b908-f4a9ed3f0813]PROFILE: kmeans completed in 6408ms

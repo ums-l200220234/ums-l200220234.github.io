@@ -1,0 +1,3 @@
+[MFLOG|0|2025-01-04T14:51:47.142611Z|runtime|b05146d5-4587-4101-8931-42d8aa073b73]File 'chat_cleaned.csv' successfully loaded from '../UAS/chat_cleaned.tar'.
+[MFLOG|0|2025-01-04T14:51:47.196078Z|runtime|fb1521c3-7a0d-414c-ad46-6694897bda4e]TF-IDF matrix shape: (7780, 1000)
+[MFLOG|0|2025-01-04T14:51:47.196922Z|runtime|e1953fae-89bf-49cc-b657-5ae6e045e266]Normalized matrix shape: (7780, 1000)

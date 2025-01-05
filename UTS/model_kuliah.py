@@ -1,8 +1,5 @@
 from metaflow import FlowSpec, step
 
-
-from metaflow import FlowSpec, step
-
 class KuliahFlow(FlowSpec):
     @step
     def start(self):

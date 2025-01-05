@@ -29,7 +29,6 @@ def preprocess_text(text):
     text = text.lower()
     text = text.translate(str.maketrans('', '', string.punctuation))
     words = word_tokenize(text)
-    # stemmed_words = [stemmer.stem(word) for word in words]
     lemmatized_words = [lemmatizer.lemmatize(word, pos=wordnet.VERB) for word in words]
     return ' '.join(lemmatized_words)
 

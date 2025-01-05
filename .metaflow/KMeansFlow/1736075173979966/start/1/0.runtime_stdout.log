@@ -1,0 +1,6 @@
+[MFLOG|0|2025-01-05T11:06:17.775780Z|runtime|ed291ff9-f4ce-41e9-b3eb-eb6545145322]Dataset cleaned. Remaining records: 7780.
+[MFLOG|0|2025-01-05T11:06:17.782117Z|runtime|d0684e07-0a7a-4899-bac0-70fa61e65eeb]Dataset cleaned. Remaining records: 7780.
+[MFLOG|0|2025-01-05T11:06:21.026733Z|runtime|37341c6a-1ef6-4b46-8404-723666335778]Preprocessing completed.
+[MFLOG|0|2025-01-05T11:06:21.086443Z|runtime|93e5e632-d671-40d7-a4af-39e4486abce0]File 'chat_cleaned.csv' successfully loaded from '../UAS/chat_cleaned.tar'.
+[MFLOG|0|2025-01-05T11:06:21.086833Z|runtime|9d386651-18f6-4b44-b3bd-2b838e1a6719]TF-IDF matrix shape: (7780, 1000)
+[MFLOG|0|2025-01-05T11:06:21.087651Z|runtime|4adfee36-8a70-4601-a9e3-24c573a0130d]Normalized matrix shape: (7780, 1000)

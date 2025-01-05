@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KMeans Metaflow Pipeline</title>
+    <title>Laporan Tugas IPSD Berbasis WEB</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .code-block {
@@ -41,11 +41,12 @@
 </head>
 <body class="bg-gray-50 py-10 px-5">
     <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">KMeans Metaflow Pipeline</h1>
-        <p class="text-center text-gray-600 mb-10">Penjelasan lima tahap utama dalam pipeline KMeans clustering menggunakan Metaflow.</p>
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">TUGAS UAS: Demo Clustering K-Means dengan MetaFLow</h1>
+        <p class="text-center text-gray-600 mb-10">Penjelasan tahap utama dalam pipeline KMeans clustering menggunakan Metaflow.</p>
+        <p class="text-center text-gray-600 mb-10">Fadhil Erdya Qashmal, L200220234</p>
         <div class="space-y-12">
             <div>
-                <div class="flex items-start space-x-4">
+                <div class="flex items-start space-x-4" onclick="showCodeBlock('step-start')">
                     <div class="w-16 h-16 bg-blue-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg">
                         1
                     </div>
@@ -57,9 +58,10 @@
                 <div id="step-start" class="code-block mt-4">
                     <h3 class="text-lg font-bold text-gray-800 mb-2">Penjelasan Fungsi:</h3>
                     <p class="text-gray-700 mb-4">
-                        Fungsi <code>start</code> memuat data dengan preprocessing dan melakukan normalisasi menggunakan TF-IDF.
-                        Selanjutnya, parameter cluster disiapkan untuk eksperimen KMeans.
+                        Fungsi <code>start</code> pada metaflow akan memuat data dari dataset chat berbentuk TAR yang sudah dibersihkan oleh method <code>load_chat</code> milik preprocessing, 
+                       . Setelah dibersihkan method <code>scale_data</code> akan melakukan pengskalaan (scaling) menggunakan TF-IDF dan dilakukan normalisasi setelahnya. Parameter cluster Kmeans didefinisikan di fungsi ini dengan 4, 5, dan 6 cluster disiapkan untuk eksperimen KMeans.
                     </p>
+                <h3 class="text-lg font-bold text-gray-800 mb-2"><code>Start</code> Flow pada Metaflow:</h3>
                     <pre><code>
 @step
 def start(self):
@@ -70,27 +72,95 @@ def start(self):
     self.next(self.train_kmeans, foreach='kmeans_params')
                     </code></pre>
                     <p class="text-gray-700 mb-4">
-                        <strong>Fungsi preprocessing:</strong>
-                        Menghapus data kosong, membersihkan teks, dan melakukan lemmatization menggunakan WordNetLemmatizer.
-                        Contoh kode:
+                        <strong>Fungsi Preprocessing:</strong>
+                        <p>
+
+                            Tahapan preprocessing bertujuan untuk mempersiapkan data teks agar dapat digunakan dalam analisis lebih lanjut, seperti klasterisasi menggunakan KMeans. 
+                            Berikut adalah tahapan utama dalam preprocessing:
+                        </p>
+                        <br>
+                        <ol>
+
+                            <li><strong>Fungsi clean_data: </strong> Data yang memiliki nilai kosong (null) atau baris yang tidak memiliki teks yang valid akan dihapus. Ini penting untuk memastikan bahwa hanya data yang relevan yang digunakan dalam model.</li>
+
+                            <li><strong>Fungsi preprocess_text: </strong> Fungsi ini melibatkan pembersiha teks dengan menghilangkan tanda baca dan mengubah semua karakter menjadi huruf kecil dan Lemmatization, proses mengubah kata ke bentuk dasar atau lemma-nya, proses ini dilakukan menggunakan <code>WordNetLemmatizer</code> dari pustaka NLTK dan juga tokenisasi, yang membantu mengurangi variasi kata dan meningkatkan kualitas analisis teks.</li>
+        
+                            <li><strong>Fungsi preprocess_Dataset: </strong> Fungsi yang mempermudah pengolahan seluruh teks pada dataset</li>
+           
+                            <li><strong>Fungsi load_chat: </strong> Memuat dataset dalam bentuk TAR lalu melakukan prapemrosesan pada setiap record nya dan mengembalikan dataset yang sudah dibersihkan dan dinormalisasi dalam bentuk dataframe milik pandas. Terdapat juga Error Handling yang akan aktif jika dataset yang dimuat bermasalah</li>
+                        </ol>
                         <pre><code>
-lemmatizer = WordNetLemmatizer()
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Kumpulan Fungsi untuk tahapan Pra-Pemrosesan Data: </h3>
+def clean_data(df):
+    df = df.dropna(subset=['Konten'])
+    df = df[df['Konten'].str.strip() != ""]
+    print(f"Dataset cleaned. Remaining records: {len(df)}.")
+    return df
+
 def preprocess_text(text):
     text = text.lower()
     text = text.translate(str.maketrans('', '', string.punctuation))
     words = word_tokenize(text)
     lemmatized_words = [lemmatizer.lemmatize(word, pos=wordnet.VERB) for word in words]
     return ' '.join(lemmatized_words)
+
+def preprocess_dataset(df):
+    df = clean_data(df)
+    df['Konten'] = df['Konten'].apply(preprocess_text)
+    print("Preprocessing completed.")
+    return df
+
+def load_chat(nums_docs):
+    tar_path =  "../UAS/chat_cleaned.tar"
+    file_name = "chat_cleaned.csv"
+    try:
+        with tarfile.open(tar_path, "r:*") as tar: 
+            member = tar.getmember(file_name)
+            with tar.extractfile(member) as f:
+                df = pd.read_csv(f) 
+                df = clean_data(df)
+                df = preprocess_dataset(df)
+        print(f"File '{file_name}' successfully loaded from '{tar_path}'.")
+        return df
+
+    except FileNotFoundError:
+        print(f"File '{tar_path}' not found.")
+    except KeyError:
+        print(f"'{file_name}' not found in the archive.")
+    except Exception as e:
+        print(f"Error occurred: {e}")
+
+
+    return df
                         </code></pre>
                     </p>
                     <p class="text-gray-700 mb-4">
                         <strong>Fungsi scale:</strong>
-                        Mengonversi teks ke matriks TF-IDF dan melakukan normalisasi data:
+                        <p>
+                            Fungsi <code>scale_data</code> bertujuan untuk mengonversi teks yang telah diproses menjadi representasi numerik dalam bentuk matriks TF-IDF dan melakukan normalisasi pada data tersebut.
+                            Proses ini sangat penting untuk memastikan bahwa setiap kata yang ada dalam dataset memiliki bobot yang relevan tanpa terpengaruh oleh frekuensi kata yang tidak signifikan. 
+                            Berikut adalah penjelasan kode dari tahapan yang dilakukan dalam fungsi ini:
+                        </p>
+                            <br>
+                            <ul>
+                                <li><strong>TF-IDF Vectorization:</strong> Proses pertama yang dilakukan adalah mengonversi data teks menjadi representasi numerik dengan mengaplikasikan <code>TfidfVectorizer</code> pada data yang telah diproses. Di sini, <code>max_features=1000</code> membatasi jumlah kata yang digunakan (fitur) menjadi 1000 kata paling relevan.</li>
+                                <li><strong>Normalization:</strong> Setelah mendapatkan matriks TF-IDF, fungsi <code>Normalizer</code> digunakan untuk menormalkan setiap dokumen dalam matriks sehingga panjang vektornya menjadi satu (unit norm). Hal ini membuat model lebih mudah dalam menemukan pola yang relevan.</li>
+                                <li><strong>Output:</strong> Fungsi ini mengembalikan dua nilai: pertama adalah matriks TF-IDF yang sudah dinormalisasi, dan kedua adalah daftar kata yang mewakili setiap kolom dalam matriks tersebut.</li>
+                            </ul>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">Kode Fungsi scaling Data:</h3>
                         <pre><code>
-vectorizer = TfidfVectorizer(max_features=1000, stop_words='english')
-tfidf_matrix = vectorizer.fit_transform(processed)
-normalizer = Normalizer()
-mtx = normalizer.fit_transform(tfidf_matrix)
+def scale_data(text_data, binary=False):
+    processed = text_data['Konten']
+    vectorizer = TfidfVectorizer(max_features=1000)
+    tfidf_matrix = vectorizer.fit_transform(processed)
+    print(f"TF-IDF matrix shape: {tfidf_matrix.shape}")
+
+    normalizer = Normalizer()
+    mtx = normalizer.fit_transform(tfidf_matrix)
+    print(f"Normalized matrix shape: {mtx.shape}")
+
+    cols = vectorizer.get_feature_names_out()
+    return mtx, cols
                         </code></pre>
                     </p>
 
@@ -98,8 +168,8 @@ mtx = normalizer.fit_transform(tfidf_matrix)
             </div>
 
             <div>
-                <div class="flex items-start space-x-4">
-                    <div class="w-16 h-16 bg-green-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg">
+                <div class="flex items-start space-x-4" onclick="showCodeBlock('step-train')">
+                    <div class="w-16 h-16 bg-green-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg" >
                         2
                     </div>
                     <div>
@@ -108,7 +178,19 @@ mtx = normalizer.fit_transform(tfidf_matrix)
                     </div>
                 </div>
                 <div id="step-train" class="code-block mt-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Kode:</h3>
+                    <p class="text-gray-600">
+                        Pada langkah ini, model <strong>KMeans</strong> dilatih dengan data yang telah diproses sebelumnya. Berikut adalah langkah-langkah utama:
+                    </p>
+                    <ol class="list-decimal ml-6 text-gray-600">
+                        <li><strong>Input K:</strong> Menentukan jumlah kluster yang digunakan berdasarkan input alur.</li>
+                        <li><strong>Membangun Model:</strong> Menginisialisasi model KMeans dengan jumlah kluster yang ditentukan.</li>
+                        <li><strong>Transformasi Data:</strong> Matriks data diubah menjadi array padat untuk pelatihan model.</li>
+                        <li><strong>Melatih Model:</strong> Model dilatih menggunakan data yang telah diproses.</li>
+                        <li><strong>Memprediksi Kluster:</strong> Memprediksi kluster untuk setiap dokumen setelah pelatihan selesai.</li>
+                        <li><strong>Melanjutkan:</strong> Menyelesaikan langkah ini dan melanjutkan ke tahap analisis.</li>
+                    </ol>
+                    <br>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Kode Fungsi Step train_kmeans:</h3>
                     <pre><code>
 @step
 def train_kmeans(self):
@@ -122,7 +204,7 @@ def train_kmeans(self):
                 </div>
             </div>
             <div>
-                <div class="flex items-start space-x-4">
+                <div class="flex items-start space-x-4" onclick="showCodeBlock('step-analyze')">
                     <div class="w-16 h-16 bg-yellow-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg">
                         3
                     </div>
@@ -132,17 +214,56 @@ def train_kmeans(self):
                     </div>
                 </div>
                 <div id="step-analyze" class="code-block mt-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Kode:</h3>
+                    <p class="text-gray-600">
+                        Pada langkah ini, dilakukan analisis terhadap hasil clustering dengan menghitung kata-kata yang paling dominan dalam setiap kluster.
+                        Fungsi utama dalam langkah ini adalah <strong>top_data_points</strong>, yang menghitung kata-kata yang paling sering muncul dalam kluster dan memberikan informasi tentang kata-kata tersebut.
+                    </p>
+                    <p class="text-gray-600">
+                        Langkah-langkah utama dalam kode ini:
+                    </p>
+                    <br>
+                    <ol class="list-decimal ml-6 text-gray-600">
+                        <li><strong>Menentukan Top Words:</strong> Fungsi <strong>top_data_points</strong> digunakan untuk menemukan kata-kata paling dominan dalam setiap kluster.</li>
+                        <li><strong>Mengambil Hasil:</strong> Fungsi ini mengembalikan daftar kata dominan beserta frekuensinya dari setiap kluster.</li>
+                        <li><strong>Melanjutkan:</strong> Setelah analisis selesai, langkah ini dilanjutkan ke tahap <strong>join</strong> untuk tahap selanjutnya.</li>
+                    </ol>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Fungsi Step <code>analyze</code> Flow pada Metaflow:</h3>
                     <pre><code>
 @step
 def analyze(self):
     self.top = top_data_points(self.k, self.clusters, self.mtx, self.cols)
     self.next(self.join)
                     </code></pre>
+                    <p class="text-gray-600">
+                        Fungsi <strong>top_data_points</strong> bertujuan untuk mencari kata-kata yang paling dominan di setiap kluster setelah model KMeans dilatih. Berikut adalah penjelasan dari setiap bagian fungsi:
+                    </p>
+                    <ol class="list-decimal ml-6 text-gray-600">
+                        <li><strong>Identifikasi Baris dalam Kluster:</strong> Fungsi ini mengidentifikasi baris yang termasuk dalam setiap kluster dengan menggunakan <code>np.where(clusters == i)</code>.</li>
+                        <li><strong>Frekuensi Kata:</strong> Frekuensi kata dihitung dengan menjumlahkan nilai pada setiap kolom untuk baris-baris yang termasuk dalam kluster tertentu.</li>
+                        <li><strong>Pemeringkatan Kata:</strong> Kata-kata diurutkan berdasarkan frekuensi kemunculannya menggunakan <code>np.argsort</code>.</li>
+                        <li><strong>Top 3 Kata Dominan:</strong> Fungsi ini mengambil 3 kata paling dominan dari setiap kluster dan mengembalikan kata beserta frekuensinya.</li>
+                        <li><strong>Output:</strong> Fungsi mengembalikan daftar kata dominan untuk setiap kluster dalam bentuk tuple, yaitu kata dan frekuensinya.</li>
+                    </ol>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Fungsi top_data_points:</h3>
+                    <pre><code>
+from itertools import islice
+import numpy as np
+
+def top_data_points(num_clusters, clusters, mtx, columns):
+    top = []
+    for i in range(num_clusters):
+        rows_in_cluster = np.where(clusters == i)[0]
+        word_freqs = mtx[rows_in_cluster].sum(axis=0).A[0]
+        ordered_freqs = np.argsort(word_freqs)
+        top_words = [(columns[idx], int(word_freqs[idx]))
+                        for idx in islice(reversed(ordered_freqs), 3)]
+        top.append(top_words)
+    return top
+                                    </code></pre>
                 </div>
             </div>
             <div>
-                <div class="flex items-start space-x-4">
+                <div class="flex items-start space-x-4"  onclick="showCodeBlock('step-join')">
                     <div class="w-16 h-16 bg-purple-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg">
                         4
                     </div>
@@ -152,7 +273,20 @@ def analyze(self):
                     </div>
                 </div>
                 <div id="step-join" class="code-block mt-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Kode:</h3>
+                    <p class="text-gray-600">
+                        Langkah <strong>Join</strong> digunakan untuk menggabungkan hasil dari berbagai eksperimen KMeans yang dilakukan sebelumnya ke dalam satu struktur data yang lebih terorganisir.
+                        Pada tahap ini, hasil top words dari setiap kluster, yang telah dihitung di langkah sebelumnya, digabungkan berdasarkan jumlah kluster yang digunakan dalam setiap eksperimen.
+                    </p>
+                    <p class="text-gray-600">
+                        Langkah-langkah utama dalam kode ini:
+                    </p>
+                    <br>
+                    <ol class="list-decimal ml-6 text-gray-600">
+                        <li><strong>Penggabungan Data:</strong> Hasil top words dari setiap eksperimen disusun dalam dictionary dengan jumlah kluster sebagai key dan top words sebagai value.</li>
+                        <li><strong>Melanjutkan:</strong> Setelah penggabungan selesai, alur dilanjutkan ke langkah <strong>end</strong> untuk mengakhiri proses.</li>
+                    </ol>
+                    <br>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Fungsi Step Join pada Metaflow :</h3>
                     <pre><code>
 @step
 def join(self, inputs):
@@ -162,7 +296,7 @@ def join(self, inputs):
                 </div>
             </div>
             <div>
-                <div class="flex items-start space-x-4">
+                <div class="flex items-start space-x-4" onclick="showCodeBlock('step-end')">
                     <div class="w-16 h-16 bg-red-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg">
                         5
                     </div>
@@ -172,12 +306,68 @@ def join(self, inputs):
                     </div>
                 </div>
                 <div id="step-end" class="code-block mt-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Kode:</h3>
+                    <p class="text-gray-600">
+                        Langkah <strong>End</strong> digunakan untuk menandai akhir dari alur kerja pipeline dan melakukan tindakan terakhir, seperti menyimpan hasil yang telah diproses.
+                        Pada kode ini, fungsi `end` tidak melakukan tindakan khusus (hanya menggunakan `pass`), yang berarti bahwa alur ini hanya selesai tanpa ada langkah tambahan yang dilakukan setelahnya.
+                    </p>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Kode Step Terakhir dalam Metaflow:</h3>
                     <pre><code>
 @step
 def end(self):
     pass
                     </code></pre>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-start space-x-4" onclick="showCodeBlock('show-results')">
+                    <div class="w-16 h-16 bg-cyan-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg">
+                        6
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 cursor-pointer" >Result</h2>
+                        <p class="text-gray-600">Menampilkan Hasil Clustering Menggunakan K-Means dan Metaflow</p>
+                    </div>
+                </div>
+                <div id="show-results" class="code-block mt-4">
+                    <p class="text-gray-600">
+                        Langkah ini berfungsi untuk menampilkan hasil akhir dari proses clustering yang dilakukan menggunakan KMeans dan MetaFlow.
+                        Setelah pipeline selesai dijalankan, kita dapat mengakses hasil clustering yang disimpan dalam atribut `run.data` pada objek `Flow`. Kode berikut berfungsi untuk mengecek hasil clustering dari tiga kluster yang telah diproses, yaitu Kluster 4, Kluster 5, dan Kluster 6, dan menampilkan kata-kata dominan yang ditemukan dalam setiap kluster tersebut.
+                    </p>
+                    <br>
+            
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Kode Tampilkan Hasil setelah MetaFlow selesai:</h3>
+                    <code><pre>
+    run = Flow('KMeansFlow').latest_run
+
+    k = run.data.top[4][:3]
+    l = run.data.top[5][:3]
+    m = run.data.top[6][:3]
+
+    print(f"Kluster 4: {k}")
+    print(f"Kluster 5: {l}")
+    print(f"Kluster 6: {m}")
+                    </code></pre>
+                    <p> Berikut adalah Hasil Clustering Menggunakan Kmeans dan MetaFlow dari salah satu Grup Whatsapp yang saya Masuki</p>
+                    <img src="asset/result.png" alt="Hasil Clustering KMeans" class="w-full h-auto">
+                </div>
+            </div>
+            <div>
+                <div class="flex items-start space-x-4" onclick="showCodeBlock('show-conclusion')">
+                    <div class="w-16 h-16 bg-gray-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg">
+                        7
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 cursor-pointer" >Conclusion</h2>
+                        <p class="text-gray-600">Menampilkan Hasil Clustering Menggunakan K-Means dan Metaflow</p>
+                    </div>
+                </div>
+                <div id="show-conclusion" class="code-block mt-4">
+                    <p>Hasil Clustering Menggunakan Kmeans dan MetaFlow dari salah satu Grup Whatsapp yang saya Masuki</p>
+                    <img src="asset/result.png" alt="Hasil Clustering KMeans" class="w-full h-auto">
+                    <p class="mt-4">Kesimpulan:</p>
+                    <p class="mt-2">Berdasarkan hasil clustering, terlihat bahwa metode K-Means dengan bantuan MetaFlow mampu mengelompokkan data chat ke dalam beberapa kluster yang memiliki kata kunci dominan, seperti 'aisy', 'ghulamiah', dan 'media'. Proses ini menunjukkan efektivitas analisis topik dalam grup WhatsApp dengan menggunakan metode ini.</p>
+                    <p class="mt-2">Dengan menggunakan MetaFlow, proses ini tidak hanya lebih terstruktur dan mudah dipahami, tetapi juga meningkatkan efisiensi dalam eksperimen dan pelatihan model, memberikan panduan jelas untuk analisis hasil clustering. Berikut adalah hasil visualisasi dari clustering yang dilakukan</p>
+                    </div>
                 </div>
             </div>
         </div>

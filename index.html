@@ -1,95 +1,186 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laporan KMeans Clustering</title>
+    <title>KMeans Metaflow Pipeline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        pre {
+        .code-block {
+            font-family: "Courier New", Courier, monospace;
             background-color: #f4f4f4;
-            padding: 10px;
             border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
             overflow-x: auto;
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
         }
-        code {
-            font-family: monospace;
+        .code-block.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
+    <script>
+        function showCodeBlock(stepId) {
+            const codeBlocks = document.querySelectorAll('.code-block');
+            codeBlocks.forEach(block => block.classList.remove('active'));
+            const selectedBlock = document.getElementById(stepId);
+            selectedBlock.classList.add('active');
+        }
+    </script>
 </head>
-<body>
-    <h1>Laporan Implementasi KMeans Clustering</h1>
+<body class="bg-gray-50 py-10 px-5">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">KMeans Metaflow Pipeline</h1>
+        <p class="text-center text-gray-600 mb-10">Penjelasan lima tahap utama dalam pipeline KMeans clustering menggunakan Metaflow.</p>
+        <div class="space-y-12">
+            <div>
+                <div class="flex items-start space-x-4">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg">
+                        1
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 cursor-pointer" onclick="showCodeBlock('step-start')">Start</h2>
+                        <p class="text-gray-600">Memuat dan memproses data chat menggunakan preprocessing dan normalisasi TF-IDF.</p>
+                    </div>
+                </div>
+                <div id="step-start" class="code-block mt-4">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Penjelasan Fungsi:</h3>
+                    <p class="text-gray-700 mb-4">
+                        Fungsi <code>start</code> memuat data dengan preprocessing dan melakukan normalisasi menggunakan TF-IDF.
+                        Selanjutnya, parameter cluster disiapkan untuk eksperimen KMeans.
+                    </p>
+                    <pre><code>
+@step
+def start(self):
+    import preprocessing
+    docs = preprocessing.load_chat(self.num_docs)
+    self.mtx, self.cols = preprocessing.scale_data(docs)
+    self.kmeans_params = [4, 5, 6]
+    self.next(self.train_kmeans, foreach='kmeans_params')
+                    </code></pre>
+                    <p class="text-gray-700 mb-4">
+                        <strong>Fungsi preprocessing:</strong>
+                        Menghapus data kosong, membersihkan teks, dan melakukan lemmatization menggunakan WordNetLemmatizer.
+                        Contoh kode:
+                        <pre><code>
+lemmatizer = WordNetLemmatizer()
+def preprocess_text(text):
+    text = text.lower()
+    text = text.translate(str.maketrans('', '', string.punctuation))
+    words = word_tokenize(text)
+    lemmatized_words = [lemmatizer.lemmatize(word, pos=wordnet.VERB) for word in words]
+    return ' '.join(lemmatized_words)
+                        </code></pre>
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        <strong>Fungsi scale:</strong>
+                        Mengonversi teks ke matriks TF-IDF dan melakukan normalisasi data:
+                        <pre><code>
+vectorizer = TfidfVectorizer(max_features=1000, stop_words='english')
+tfidf_matrix = vectorizer.fit_transform(processed)
+normalizer = Normalizer()
+mtx = normalizer.fit_transform(tfidf_matrix)
+                        </code></pre>
+                    </p>
 
-    <h2>1. Pengantar</h2>
-    <p>Kode ini dirancang untuk melakukan clustering data teks menggunakan algoritma <strong>KMeans</strong> yang diimplementasikan dengan bantuan library Scikit-learn dan Metaflow. Proses dimulai dengan memuat data dari file terkompresi, membersihkan data, dan memprosesnya sebelum diterapkan algoritma clustering.</p>
+                </div>
+            </div>
 
-    <h2>2. Modul Preprocessing</h2>
-    <p>Modul ini menangani langkah-langkah berikut:</p>
-    <h3>a. Membersihkan Data</h3>
-    <p>Data yang kosong atau hanya berisi spasi dihapus:</p>
-    <pre><code>df = df.dropna(subset=['Konten'])
-df = df[df['Konten'].str.strip() != ""]</code></pre>
-
-    <h3>b. Preprocessing Teks</h3>
-    <p>Teks diubah menjadi huruf kecil, menghapus tanda baca, dan melakukan proses lemmatization:</p>
-    <pre><code>text = text.lower()
-text = text.translate(str.maketrans('', '', string.punctuation))
-lemmatized_words = [lemmatizer.lemmatize(word, pos=wordnet.VERB) for word in words]</code></pre>
-
-    <h3>c. Mengukur Kemunculan Kata</h3>
-    <p>Menggunakan <code>TfidfVectorizer</code> untuk menghitung frekuensi kata:</p>
-    <pre><code>vectorizer = TfidfVectorizer(max_features=1000, stop_words='english')</code></pre>
-
-    <h2>3. Memuat Data dari Arsip .tar</h2>
-    <p>Data diambil dari file terkompresi (tar) menggunakan modul <code>tarfile</code>:</p>
-    <pre><code>with tarfile.open(tar_path, "r:*") as tar:
-    member = tar.getmember(file_name)
-    with tar.extractfile(member) as f:
-        df = pd.read_csv(f)</code></pre>
-
-    <h2>4. Implementasi KMeans dengan Metaflow</h2>
-    <p>Pipeline Metaflow diimplementasikan sebagai berikut:</p>
-
-    <h3>a. Parameter dan Start</h3>
-    <p>Parameter seperti jumlah dokumen dan jumlah cluster diinisialisasi:</p>
-    <pre><code>num_docs = Parameter('num-docs', default=1000)</code></pre>
-
-    <h3>b. Training Model KMeans</h3>
-    <p>Algoritma KMeans diterapkan dengan 3 kemungkinan jumlah cluster:</p>
-    <pre><code>model = KMeans(n_clusters=self.k, random_state=42, n_init=10)</code></pre>
-
-    <h3>c. Analisis dan Pengelompokan</h3>
-    <p>Data diurutkan berdasarkan frekuensi kata tertinggi di setiap cluster:</p>
-    <pre><code>ordered_freqs = np.argsort(word_freqs)</code></pre>
-
-    <h2>5. Hasil dan Validasi</h2>
-    <p>Hasil clustering dapat diperiksa dengan kode berikut:</p>
-    <pre><code>k = run.data.top[4][:3]
-l = run.data.top[5][:3]
-m = run.data.top[6][:3]</code></pre>
-    <p>Menampilkan 3 kata teratas dari masing-masing cluster:</p>
-    <pre><code>print(f"Kluster 4: {k}")
-print(f"Kluster 5: {l}")
-print(f"Kluster 6: {m}")</code></pre>
-
-    <h2>6. Kesimpulan</h2>
-    <p>Kode ini secara efektif memproses data teks, menerapkan algoritma KMeans clustering, dan menganalisis hasilnya. Proses ini dirancang agar dapat menangani file terkompresi dengan format .tar, membersihkan data, dan menerapkan preprocessing yang diperlukan.</p>
-
-    <h2>7. Rekomendasi</h2>
-    <ul>
-        <li>Periksa ukuran dataset yang digunakan untuk memastikan kecukupan data dalam setiap cluster.</li>
-        <li>Pertimbangkan untuk menambahkan visualisasi hasil clustering menggunakan PCA atau t-SNE.</li>
-        <li>Eksplorasi berbagai parameter KMeans seperti <code>n_init</code> dan <code>max_iter</code> untuk optimasi hasil.</li>
-    </ul>
-
+            <div>
+                <div class="flex items-start space-x-4">
+                    <div class="w-16 h-16 bg-green-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg">
+                        2
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 cursor-pointer" onclick="showCodeBlock('step-train')">Train KMeans</h2>
+                        <p class="text-gray-600">Melatih model KMeans clustering dengan jumlah kluster yang bervariasi.</p>
+                    </div>
+                </div>
+                <div id="step-train" class="code-block mt-4">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Kode:</h3>
+                    <pre><code>
+@step
+def train_kmeans(self):
+    self.k = self.input
+    model = KMeans(n_clusters=self.k, random_state=42, n_init=10)
+    mtx_dense = self.mtx.toarray()
+    model.fit(mtx_dense)
+    self.clusters = model.predict(mtx_dense)
+    self.next(self.analyze)
+                    </code></pre>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-start space-x-4">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg">
+                        3
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 cursor-pointer" onclick="showCodeBlock('step-analyze')">Analyze</h2>
+                        <p class="text-gray-600">Menganalisis hasil clustering dengan menghitung kata-kata yang dominan.</p>
+                    </div>
+                </div>
+                <div id="step-analyze" class="code-block mt-4">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Kode:</h3>
+                    <pre><code>
+@step
+def analyze(self):
+    self.top = top_data_points(self.k, self.clusters, self.mtx, self.cols)
+    self.next(self.join)
+                    </code></pre>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-start space-x-4">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg">
+                        4
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 cursor-pointer" onclick="showCodeBlock('step-join')">Join</h2>
+                        <p class="text-gray-600">Menggabungkan hasil dari berbagai eksperimen KMeans menjadi satu data terstruktur.</p>
+                    </div>
+                </div>
+                <div id="step-join" class="code-block mt-4">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Kode:</h3>
+                    <pre><code>
+@step
+def join(self, inputs):
+    self.top = {inp.k: inp.top for inp in inputs}
+    self.next(self.end)
+                    </code></pre>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-start space-x-4">
+                    <div class="w-16 h-16 bg-red-500 rounded-full text-white flex items-center justify-center text-lg font-bold shadow-lg">
+                        5
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 cursor-pointer" onclick="showCodeBlock('step-end')">End</h2>
+                        <p class="text-gray-600">Mengakhiri pipeline dan menyimpan hasil akhir.</p>
+                    </div>
+                </div>
+                <div id="step-end" class="code-block mt-4">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Kode:</h3>
+                    <pre><code>
+@step
+def end(self):
+    pass
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
